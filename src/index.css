@@ -1,0 +1,216 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
+
+/* Customize color themes here */
+:root {
+    --black: #000000;
+    --white: #FFFFFF;
+
+    --body-background: #F6F6F7;
+
+
+    --primary-0: #99B9EE;
+    --primary-25: #5B8FE3;
+    --primary-50: #3273DC;
+    --primary-75: #285CB0;
+    --primary-100: #1E4584;
+
+    --secondary-0: #80E8D9;
+    --secondary-25: #33DAC1;
+    --secondary-50: #00D1B2;
+    --secondary-75: #00A78E;
+    --secondary-100: #007D6B;
+
+    --info-0: #79C4F5;
+    --info-25: #4DB0F1;
+    --info-50: #209CEE;
+    --info-75: #1A7DBE;
+    --info-100: #135E8F;
+
+    --light-0: #F9F9F9;
+    --light-25: #F7F7F7;
+    --light-50: #F5F5F5;
+    --light-75: #C4C4C4;
+    --light-100: #939393;
+
+    --dark-0: #868686;
+    --dark-25: #5E5E5E;
+    --dark-50: #363636;
+    --dark-75: #2B2B2B;
+    --dark-100: #202020;
+
+    --success-0: #7BE3A0;
+    --success-25: #4FDA80;
+    --success-50: #23D160;
+    --success-75: #1CA74D;
+    --success-100: #157D3A;
+
+    --warning-0: #FFEB9A;
+    --warning-25: #FFE479;
+    --warning-50: #FFDD57;
+    --warning-75: #CCB146;
+    --warning-100: #998534;
+
+    --danger-0: #FF88A0;
+    --danger-25: #FF6080;
+    --danger-50: #FF3860;
+    --danger-75: #CC2D4D;
+    --danger-100: #99223A;
+
+    --visited: #C301E2;
+
+    --button-padding-small: 0.375rem 0.75rem;
+    --button-padding-normal: 0.5rem 1.0rem;
+    --button-padding-large: 0.625rem 1.25rem;
+    --button-font-small: 0.75rem;
+    --button-font-normal: 1.0rem;
+    --button-font-large: 1.25rem;
+    --button-border-radius: 4px;
+
+    --sidebar-width-expand: 250px;
+    --sidebar-width-collapse: 70px;
+    --header-height: 70px;
+}
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+@tailwind variants;
+
+p,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+li,
+input,
+button,
+a {
+    @apply font-sans antialiased;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+    @apply font-medium;
+}
+
+h1 {
+    @apply text-4xl;
+}
+
+h2 {
+    @apply text-3xl;
+}
+
+h3 {
+    @apply text-2xl;
+}
+
+h4 {
+    @apply text-xl;
+}
+
+h5 {
+    @apply text-lg;
+}
+
+ol,
+ul {
+    @apply list-none;
+}
+
+
+input {
+    @apply placeholder-light-75;
+}
+
+button {
+    @apply transition-colors duration-200 ease-in-out focus:outline-none;
+}
+
+.btn {
+    @apply px-6 py-2 rounded;
+}
+
+.btn-lg {
+    @apply text-lg px-8 py-2 rounded;
+}
+
+.btn-sm {
+    @apply text-sm px-4 py-2 rounded;
+}
+
+.btn-primary {
+    @apply bg-primary-50 hover:bg-primary-25 active:bg-primary-75 disabled:bg-primary-0 focus:ring-primary-75 focus:ring-2 focus:bg-primary-25;
+}
+.btn-primary[data-active=true] {
+    @apply bg-primary-75;
+}
+
+.btn-secondary {
+    @apply bg-secondary-50 hover:bg-secondary-25 active:bg-secondary-75 disabled:bg-secondary-0 focus:ring-secondary-75 focus:ring-2 focus:bg-secondary-25;
+}
+.btn-secondary[data-active=true] {
+    @apply bg-secondary-75;
+}
+
+.btn-info {
+    @apply bg-info-50 hover:bg-info-25 active:bg-info-75 disabled:bg-info-0 focus:ring-info-75 focus:ring-2 focus:bg-info-25;
+}
+.btn-info[data-active=true] {
+    @apply bg-info-75;
+}
+
+.btn-success {
+    @apply bg-success-50 hover:bg-success-25 active:bg-success-75 disabled:bg-success-0 focus:ring-success-75 focus:ring-2 focus:bg-success-25;
+}
+.btn-success[data-active=true] {
+    @apply bg-success-75;
+}
+
+.btn-warning {
+    @apply bg-warning-50 hover:bg-warning-25 active:bg-warning-75 disabled:bg-warning-0 focus:ring-warning-75 focus:ring-2 focus:bg-warning-25;
+}
+.btn-warning[data-active=true] {
+    @apply bg-warning-75;
+}
+
+.btn-danger {
+    @apply bg-danger-50 hover:bg-danger-25 active:bg-danger-75 disabled:bg-danger-0 focus:ring-danger-75 focus:ring-2 focus:bg-danger-25;
+}
+.btn-danger[data-active=true] {
+    @apply bg-danger-75;
+}
+
+.btn-dark {
+    @apply bg-dark-50 hover:bg-dark-25 active:bg-dark-75 disabled:bg-dark-0 focus:ring-dark-75 focus:ring-2 focus:bg-dark-25;
+}
+.btn-dark[data-active=true] {
+    @apply bg-dark-75;
+}
+
+.btn-light {
+    @apply bg-light-50 hover:bg-light-25 hover:ring-1 hover:ring-light-75 active:bg-light-75 disabled:bg-light-0 focus:ring-light-75 focus:ring-2 focus:bg-light-25;
+}
+.btn-light[data-active=true] {
+    @apply bg-light-75;
+}
+
+.btn-primary,
+.btn-secondary,
+.btn-info,
+.btn-success,
+.btn-danger,
+.btn-dark {
+    @apply text-white;
+}
+
+.btn-warning,
+.btn-light {
+    @apply text-black;
+}
