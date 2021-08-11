@@ -1,18 +1,9 @@
 <template>
     <div
-        class="
-            py-6
-            px-8
-            bg-white
-            shadow-sm
-            rounded-md
-            flex flex-col
-            gap-4
-            flex-1
-        "
+        class="py-6 px-8 bg-white shadow-sm rounded-md flex flex-col gap-4"
         :class="[cardType, cardClass]"
     >
-        <div class="flex flex-col">
+        <div class="flex flex-col" v-if="title || subtitle">
             <h3 v-if="title">{{ title }}</h3>
             <p class="text-light-100" v-if="subtitle">{{ subtitle }}</p>
         </div>

@@ -1,42 +1,38 @@
 <template>
     <layout>
         <section class="flex flex-col gap-2">
-            <h1>Sample Page</h1>
-            <p class="text-light-100">Sample help text for sample page.</p>
+            <h1>Welcome to Corrad Neo</h1>
+            <p class="text-light-100">
+                An admin dashboard, created with perfection, powered by
+                TailwindCSS and Vue!
+            </p>
         </section>
-        <card title="Sample Card" subtitle="Sample help text">
+        <card title="Customisation" cardClass="max-w-screen-lg">
             <p>
-                Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed
-                diam nonummy nibh euismod tincidunt ut laoreet dolore magna
-                aliquam erat volutpat. Ut wisi enim ad minim veniam, quis
-                nostrud exerci tation ullamcorper suscipit lobortis nisl ut
-                aliquip ex ea commodo consequat. Duis autem vel eum iriure dolor
-                in hendrerit in vulputate velit esse molestie consequat, vel
-                illum dolore eu feugiat nulla facilisis at vero eros et accumsan
-                et iusto odio dignissim qui blandit praesent luptatum zzril
-                delenit augue duis dolore te feugait nulla facilisi.
+                You can explore all components available out of the box for you
+                to customise your admin dashboard! Choose what matters to you,
+                and start building your own dashboard!
 
                 <br />
 
-                Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed
-                diam nonummy nibh euismod tincidunt ut laoreet dolore magna
-                aliquam erat volutpat. Ut wisi enim ad minim veniam, quis
-                nostrud exerci tation ullamcorper suscipit lobortis nisl ut
-                aliquip ex ea commodo consequat. Duis autem vel eum iriure dolor
-                in hendrerit in vulputate velit esse molestie consequat, vel
-                illum dolore eu feugiat nulla facilisis at vero eros et accumsan
-                et iusto odio dignissim qui blandit praesent luptatum zzril
-                delenit augue duis dolore te feugait nulla facilisi.
+                We are still expanding our component libraries, so you can do a
+                lot with dashboard customisation, from modal, auth options, and
+                others.
 
                 <br />
 
-                Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed
-                diam nonummy nibh euismod tincidunt ut laoreet dolore magna
-                aliquam erat volutpat. Ut wisi enim ad minim veniam, quis
-                nostrud exerci
+                To help us build a great dashboard, you can head to our
+                <a
+                    href="https://github.com/alserembani94/neo-corrad-v1"
+                    target="_blank"
+                    rel="noreferrer noopener"
+                    >Corrad Github</a
+                >
+                and post issues. Or, you can just do pull request, and our team
+                will review your suggestions!
             </p>
         </card>
-        <section class="grid grid-cols-3 gap-8">
+        <!-- <section class="grid grid-cols-3 gap-8">
             <card title="Sample Card" subtitle="Sample help text">
                 <p>
                     Lorem ipsum dolor sit amet, consectetuer adipiscing elit,
@@ -112,8 +108,8 @@
                     nulla facilisi.
                 </p>
             </card>
-        </section>
-        <section class="grid grid-cols-3 gap-8">
+        </section> -->
+        <!-- <section class="grid grid-cols-3 gap-8">
             <card
                 title="Sample Card"
                 subtitle="Sample help text"
@@ -179,8 +175,8 @@
                     nulla facilisi.
                 </p>
             </card>
-        </section>
-        <section class="section">
+        </section> -->
+        <!-- <section class="section">
             <p>Components</p>
             <h1>Header 1</h1>
             <h2>Header 2</h2>
@@ -209,17 +205,7 @@
                 <button class="btn btn-light">Holla</button>
                 <button class="btn btn-dark">Holla</button>
             </div>
-            <!-- <card title="Buttons">
-                <button class="solid_primary">Primary</button>
-                <button class="solid_secondary">Secondary</button>
-                <button class="solid_info">Info</button>
-                <button class="solid_success">Success</button>
-                <button class="solid_warning">Warning</button>
-                <button class="solid_danger">Danger</button>
-                <button class="solid_light">Light</button>
-                <button class="solid_dark">Dark</button>
-            </card> -->
-        </section>
+        </section> -->
     </layout>
 </template>
 

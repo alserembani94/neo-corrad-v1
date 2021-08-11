@@ -67,7 +67,7 @@
     --button-border-radius: 4px;
 
     --sidebar-width-expand: 250px;
-    --sidebar-width-collapse: 70px;
+    --sidebar-width-collapse: 90px;
     --header-height: 70px;
 }
 
@@ -128,6 +128,9 @@ ul {
     @apply list-none;
 }
 
+a {
+    @apply text-primary-50 hover:text-primary-25 visited:text-primary-100;
+}
 
 input {
     @apply placeholder-light-75;

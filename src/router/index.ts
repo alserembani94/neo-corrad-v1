@@ -1,5 +1,6 @@
 import { createRouter, createWebHistory, RouteRecordRaw } from "vue-router";
 import Home from "../views/Home.vue";
+import Page404 from "../views/404.vue";
 
 const routes: Array<RouteRecordRaw> = [
     {
@@ -15,6 +16,13 @@ const routes: Array<RouteRecordRaw> = [
         // which is lazy-loaded when the route is visited.
         component: () =>
             import(/* webpackChunkName: "about" */ "../views/About.vue"),
+    },
+
+    // For nested routes, use children
+    {
+        path: "/:pathMatch(.*)*",
+        name: "404",
+        component: Page404,
     },
 ];
 

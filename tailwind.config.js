@@ -81,6 +81,9 @@ module.exports = {
                 "sidebar-collapse": "var(--sidebar-width-collapse)",
                 header: "var(--header-height)",
             },
+            minWidth: {
+                mobile: "300px",
+            },
         },
     },
     variants: {
