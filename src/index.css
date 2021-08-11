@@ -119,6 +119,10 @@ h5 {
     @apply text-lg;
 }
 
+br {
+    @apply mb-6;
+}
+
 ol,
 ul {
     @apply list-none;

@@ -1,5 +1,17 @@
 <template>
-    <div class="about">
-        <h1>This is an about page</h1>
-    </div>
+    <layout>
+        <p>This is About Us page</p>
+    </layout>
 </template>
+
+<script lang="ts">
+import { defineComponent } from "vue";
+import Layout from "@/components/layouts/Default.vue";
+
+export default defineComponent({
+    name: "Home",
+    components: {
+        Layout,
+    },
+});
+</script>
