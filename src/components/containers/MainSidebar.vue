@@ -312,7 +312,7 @@ export default defineComponent({
         ];
 
         const flatMapRoute: {
-            [key: string]: Array<any>;
+            [key: string]: Array<unknown>;
         } = {};
 
         menuList.forEach((menuItem) => {
