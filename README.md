@@ -10,7 +10,7 @@ Cored is a free and open-source admin dashboard, carefully crafted for your engi
 - **Progressive Web Apps**. You don't have to worry about whether the app is PWA-ready or not, because we put it in place for you!
 - **Customizable**. You can quickly build your dashboard by fully customising color themes, sizes according to your aesthetics!
 
-[Try live demo](https://blissful-mclean-f178da.netlify.app/)
+[Try live demo](https://neo-corrad-v1.netlify.app/)
 
 ## 🚀 Getting started
 
