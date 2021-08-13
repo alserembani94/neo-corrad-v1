@@ -40,7 +40,7 @@
                     >
                         <div class="w-6 h-6 flex justify-center items-center">
                             <font-awesome-icon
-                                :icon="menu.icon"
+                                :icon="icon[menu.icon]"
                                 flip="horizontal"
                             />
                         </div>
@@ -54,10 +54,7 @@
                             class="w-6 h-6 flex justify-center items-center"
                             v-if="menu.subMenu"
                         >
-                            <font-awesome-icon
-                                :icon="icon.faChevronLeft"
-                                flip="horizontal"
-                            />
+                            <font-awesome-icon :icon="icon.faChevronRight" />
                         </div>
                     </button>
                     <!-- Second level navigation -->
@@ -87,8 +84,34 @@
                                 "
                                 :data-active="currentRoute === subMenu1.path"
                             >
+                                <div
+                                    class="
+                                        w-6
+                                        h-6
+                                        flex
+                                        justify-center
+                                        items-center
+                                        transition-all
+                                        duration-300
+                                    "
+                                    :class="{
+                                        'pl-8': !store.state.layout
+                                            .isSidebarCollapse,
+                                    }"
+                                >
+                                    <font-awesome-icon
+                                        :icon="
+                                            icon[subMenu1.icon] || icon.faCircle
+                                        "
+                                        :transform="
+                                            subMenu1.icon
+                                                ? 'shrink-4'
+                                                : 'shrink-8'
+                                        "
+                                    />
+                                </div>
                                 <p
-                                    class="pl-8 flex-1"
+                                    class="pl-2 flex-1"
                                     v-if="!store.state.layout.isSidebarCollapse"
                                 >
                                     {{ subMenu1.label }}
@@ -105,8 +128,7 @@
                                     v-if="subMenu1.subMenu"
                                 >
                                     <font-awesome-icon
-                                        :icon="icon.faChevronLeft"
-                                        flip="horizontal"
+                                        :icon="icon.faChevronRight"
                                         transform="shrink-4"
                                     />
                                 </div>
@@ -140,8 +162,32 @@
                                             currentRoute === subMenu2.path
                                         "
                                     >
+                                        <div
+                                            class="
+                                                w-6
+                                                h-6
+                                                flex
+                                                justify-center
+                                                items-center
+                                                transition-all
+                                                duration-300
+                                            "
+                                            :class="{
+                                                'pl-16':
+                                                    !store.state.layout
+                                                        .isSidebarCollapse,
+                                            }"
+                                        >
+                                            <font-awesome-icon
+                                                :icon="
+                                                    icon[subMenu2.icon] ||
+                                                    icon.faDotCircle
+                                                "
+                                                transform="shrink-8"
+                                            />
+                                        </div>
                                         <p
-                                            class="pl-16"
+                                            class="pl-2"
                                             v-if="
                                                 !store.state.layout
                                                     .isSidebarCollapse
@@ -166,26 +212,22 @@ import { useStore } from "@/store";
 import {
     faTachometerAlt,
     faClipboardList,
+    faChevronDown,
+    faChevronRight,
+    faMousePointer,
+    faCalculator,
+    faHandPointUp,
+    faPaintBrush,
+    faDotCircle,
+    faCircle,
+    faFont,
     faUser,
     faBox,
-    faChevronDown,
-    faChevronLeft,
-    faMousePointer,
-    IconDefinition,
     faInfo,
 } from "@fortawesome/free-solid-svg-icons";
 import { FontAwesomeIcon } from "@fortawesome/vue-fontawesome";
 import { useRouter } from "vue-router";
-
-type MenuItem = {
-    id: string;
-    label: string;
-    icon?: IconDefinition;
-    path?: string;
-    subMenu?: MenuList;
-};
-
-type MenuList = Array<MenuItem>;
+import { sidebarMenu } from "@/static/sidebarMenu";
 
 type State = {
     focusedMenu?: string;
@@ -204,8 +246,14 @@ export default defineComponent({
             faTachometerAlt,
             faClipboardList,
             faChevronDown,
-            faChevronLeft,
+            faChevronRight,
             faMousePointer,
+            faCalculator,
+            faPaintBrush,
+            faHandPointUp,
+            faDotCircle,
+            faCircle,
+            faFont,
             faUser,
             faBox,
             faInfo,
@@ -226,96 +274,11 @@ export default defineComponent({
             else state.focusedMenu = undefined;
         };
 
-        // Only 3 level navigation is allowed
-        const menuList: MenuList = [
-            {
-                id: "menu-dashboard",
-                label: "Dashboard",
-                icon: icon.value.faTachometerAlt,
-                path: "/",
-            },
-            {
-                id: "menu-basic-component",
-                label: "Basics",
-                icon: icon.value.faMousePointer,
-                subMenu: [
-                    {
-                        id: "menu-button",
-                        label: "Buttons",
-                        path: "/basics/buttons",
-                    },
-                ],
-            },
-            {
-                id: "menu-forms",
-                label: "Forms",
-                icon: icon.value.faClipboardList,
-                subMenu: [
-                    {
-                        id: "menu-input",
-                        label: "Input",
-                        path: "/forms/input",
-                    },
-                ],
-            },
-            {
-                id: "menu-containers",
-                label: "Containers",
-                icon: icon.value.faBox,
-                subMenu: [
-                    {
-                        id: "menu-cards",
-                        label: "Cards",
-                        path: "/containers/cards",
-                    },
-                ],
-            },
-            {
-                id: "menu-account",
-                label: "Account",
-                icon: icon.value.faUser,
-                subMenu: [
-                    {
-                        id: "menu-profile",
-                        label: "Profile",
-                        path: "/test1",
-                    },
-                    {
-                        id: "menu-appearance",
-                        label: "Appearance",
-                        path: "/test2",
-                    },
-                    {
-                        id: "menu-domain",
-                        label: "Domain",
-                        subMenu: [
-                            {
-                                id: "menu-domain-manage",
-                                label: "Manage",
-                                path: "/test3",
-                            },
-                            {
-                                id: "menu-domain-add",
-                                label: "Add",
-                                path: "/test4",
-                            },
-                        ],
-                    },
-                ],
-            },
-            {
-                id: "menu-about",
-                label: "About",
-                icon: icon.value.faInfo,
-                path: "/about",
-            },
-        ];
-
         const flatMapRoute: {
             [key: string]: Array<unknown>;
         } = {};
 
-        menuList.forEach((menuItem) => {
+        sidebarMenu.forEach((menuItem) => {
             flatMapRoute[menuItem.id] = [
                 menuItem.path ||
                     menuItem.subMenu?.flatMap((sub1Item) => {
@@ -339,7 +302,7 @@ export default defineComponent({
             state,
             icon,
             store,
-            menuList,
+            menuList: sidebarMenu,
             router,
             currentRoute,
             flatMapRoute,

@@ -96,9 +96,13 @@ h3,
 h4,
 h5,
 h6 {
-    @apply font-medium;
+    @apply font-semibold;
 }
 
+/* For font sizes, can refer here: https://tailwindcss.com/docs/font-size */
+p, ul, ol {
+    @apply leading-7;
+}
 h1 {
     @apply text-4xl;
 }
@@ -129,7 +133,7 @@ ul {
 }
 
 a {
-    @apply text-primary-50 hover:text-primary-25 visited:text-primary-100;
+    @apply text-primary-50 underline hover:text-primary-25 visited:text-primary-100;
 }
 
 input {
@@ -140,7 +144,7 @@ button {
     @apply transition-colors duration-200 ease-in-out focus:outline-none;
 }
 
-.btn {
+.btn-base {
     @apply px-6 py-2 rounded;
 }
 
@@ -181,7 +185,7 @@ button {
 }
 
 .btn-warning {
-    @apply bg-warning-50 hover:bg-warning-25 active:bg-warning-75 disabled:bg-warning-0 focus:ring-warning-75 focus:ring-2 focus:bg-warning-25;
+    @apply bg-warning-50 hover:bg-warning-25 active:bg-warning-75 disabled:bg-warning-0 disabled:text-dark-0 focus:ring-warning-75 focus:ring-2 focus:bg-warning-25;
 }
 .btn-warning[data-active=true] {
     @apply bg-warning-75;
@@ -220,4 +224,15 @@ button {
 .btn-warning,
 .btn-light {
     @apply text-black;
+}
+
+/* Table Section */
+thead {
+    @apply bg-light-25 text-dark-25 uppercase font-semibold;
+}
+tr {
+    @apply border-b border-t border-light-50 hover:bg-light-0;
+}
+td {
+    @apply p-4;
 }

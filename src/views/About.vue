@@ -19,6 +19,23 @@
             </card>
         </section>
         <section class="flex flex-row flex-wrap gap-8">
+            <card title="Corrad Stack" cardClass="flex-1">
+                <ul class="flex flex-row flex-wrap">
+                    <li>
+                        <font-awesome-layers full-width class="fa-3x">
+                            <font-awesome-icon :icon="icons.faVuejs" />
+                            <font-awesome-layers-text
+                                class="w-full"
+                                transform="down-14 shrink-12"
+                                value="Vue 3"
+                            />
+                        </font-awesome-layers>
+                    </li>
+                </ul>
+                <p></p>
+            </card>
+        </section>
+        <section class="flex flex-row flex-wrap gap-8">
             <card
                 title="License"
                 cardClass="flex-1 min-w-mobile max-w-screen-lg"
@@ -53,15 +70,40 @@
 </template>
 
 <script lang="ts">
-import { defineComponent } from "vue";
+import { defineComponent, computed } from "vue";
 import Layout from "@/components/layouts/Default.vue";
 import Card from "@/components/containers/Card.vue";
+import {
+    faVuejs,
+    faFontAwesome,
+    faHtml5,
+    faCss3,
+} from "@fortawesome/free-brands-svg-icons";
+import {
+    FontAwesomeIcon,
+    FontAwesomeLayers,
+    FontAwesomeLayersText,
+} from "@fortawesome/vue-fontawesome";
 
 export default defineComponent({
     name: "About",
     components: {
         Layout,
         Card,
+        FontAwesomeIcon,
+        FontAwesomeLayers,
+        FontAwesomeLayersText,
+    },
+    setup() {
+        const icons = computed(() => ({
+            faVuejs,
+            faFontAwesome,
+            faHtml5,
+            faCss3,
+        }));
+        return {
+            icons,
+        };
     },
 });
 </script>

@@ -20,6 +20,18 @@ const routes: Array<RouteRecordRaw> = [
 
     // For nested routes, use children
     {
+        path: "/basics/texts",
+        name: "Texts",
+        component: () => import("../views/basics/Texts.vue"),
+    },
+    {
+        path: "/basics/buttons",
+        name: "Buttons",
+        component: () => import("../views/basics/Buttons.vue"),
+    },
+
+    // For 404 Error Page
+    {
         path: "/:pathMatch(.*)*",
         name: "404",
         component: Page404,

@@ -1,6 +1,16 @@
 <template>
     <div
-        class="py-6 px-8 bg-white shadow-sm rounded-md flex flex-col gap-4"
+        class="
+            py-6
+            px-8
+            bg-white
+            shadow-sm
+            rounded-md
+            flex flex-col
+            gap-4
+            transition-all
+            duration-300
+        "
         :class="[cardType, cardClass]"
     >
         <div class="flex flex-col" v-if="title || subtitle">
@@ -8,7 +18,7 @@
             <p class="text-light-100" v-if="subtitle">{{ subtitle }}</p>
         </div>
         <hr class="text-light-50" v-if="title || subtitle" />
-        <div class="flex flex-col">
+        <div class="flex flex-col gap-4">
             <slot />
         </div>
     </div>
