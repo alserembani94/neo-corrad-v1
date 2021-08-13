@@ -4,7 +4,7 @@
             <img
                 src="https://www.clipartmax.com/png/full/60-605859_spongebob-caveman-angry-png-caveman-spongebob-png.png"
                 alt="I'm sure you are lost"
-                class="h-2/3 w-1/4 min-h-80 min-w-80 object-contain"
+                class="w-full max-w-md object-contain"
             />
             <p class="text-9xl font-extrabold">404</p>
             <p>Are you lost?</p>
