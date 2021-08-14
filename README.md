@@ -1,8 +1,10 @@
-<h1 align="center">✨ Cored Engine Dashboard ✨</h1>
+<h1 align="center">✨ NeoCorrad UI ✨</h1>
+
+[![Netlify Status](https://api.netlify.com/api/v1/badges/edf9c351-6486-41b8-98ef-48bd868fbfdb/deploy-status)](https://app.netlify.com/sites/neo-corrad-v1/deploys)
 
 > Currently this template is not released yet, so please use it carefully.
 
-Cored is a free and open-source admin dashboard, carefully crafted for your engine, powered by Vue 3!
+NeoCorrad UI is a free and open-source admin dashboard, carefully crafted for your engine, powered by Vue 3!
 
 - **Well-crafted components**. All of the components are coded natively using SCSS pre-processors, so you can freely customize each components to your liking.
 - **Modularized state  management**. Leveraging the power of Vuex 4.x, you can craft your state management solution based on your needs.
@@ -46,7 +48,7 @@ Visit [http://localhost:8080](http://localhost:8080) and enjoy! 🎉
 - macOS Mojave
 - Windows 10
 
-(Please note that Cored may work on other operating systems, but these are not tested nor officially supported at this time.)
+(Please note that Corrad may work on other operating systems, but these are not tested nor officially supported at this time.)
 
 **Node:**
 
@@ -56,7 +58,7 @@ Visit [http://localhost:8080](http://localhost:8080) and enjoy! 🎉
 ## 🌟 Features
 
 - **Vue 3:** We are using the latest Vue to serve you the latest feature offered in the market. For more information, you can visit [Vue 3 documentation](https://v3.vuejs.org/guide/introduction.html).
-- **Typescript:** Cored is built using Typescript, so you can comfortably type your code without having to worry about type-related bugs.
+- **Typescript:** Corrad is built using Typescript, so you can comfortably type your code without having to worry about type-related bugs.
 - **Modern Admin Panel:** Elegant, minimalistic, entirely customizable components, crafted carefully using SCSS preprocessors. You can costumized it globally or at component level.
 - **Vuex State Management:** State management can be easily modularized to your needs! For more information on how to use Vuex 4, you can visit [Vuex 4 documentation guide](https://next.vuex.vuejs.org/).
 

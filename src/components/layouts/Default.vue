@@ -10,26 +10,7 @@
     </div>
 </template>
 
-<script lang="ts">
-import { defineComponent } from "vue";
+<script setup lang="ts">
 import MainHeader from "../containers/MainHeader.vue";
 import MainSidebar from "../containers/MainSidebar.vue";
-// import { useStore } from "@/store";
-
-export default defineComponent({
-    name: "DefaultLayout",
-    components: {
-        MainHeader,
-        MainSidebar,
-    },
-    setup() {
-        // const store = useStore();
-        // const tex = ref("Pulopop!");
-
-        return {
-            // store,
-            // tex,
-        };
-    },
-});
 </script>

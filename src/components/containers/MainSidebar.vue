@@ -207,11 +207,15 @@
                 </li>
             </ul>
         </nav>
+        <div class="flex items-center justify-center px-4 py-4">
+            <!-- <p>{{ process.env.GITHUB_RELEASE_VERSION_URL }}</p> -->
+            <button class="btn-info btn-sm w-full">Version: v0.1.1</button>
+        </div>
     </section>
 </template>
 
-<script lang="ts">
-import { defineComponent, computed, reactive } from "vue";
+<script setup lang="ts">
+import { computed, reactive } from "vue";
 import { useStore } from "@/store";
 import {
     faTachometerAlt,
@@ -231,88 +235,70 @@ import {
 } from "@fortawesome/free-solid-svg-icons";
 import { FontAwesomeIcon } from "@fortawesome/vue-fontawesome";
 import { useRouter } from "vue-router";
-import { sidebarMenu } from "@/static/sidebarMenu";
+import { sidebarMenu as menuList } from "@/static/sidebarMenu";
 
 type State = {
     focusedMenu?: string;
 };
+const router = useRouter();
+const store = useStore();
+const icon = computed(() => ({
+    faTachometerAlt,
+    faClipboardList,
+    faChevronDown,
+    faChevronRight,
+    faMousePointer,
+    faCalculator,
+    faPaintBrush,
+    faHandPointUp,
+    faDotCircle,
+    faCircle,
+    faFont,
+    faUser,
+    faBox,
+    faInfo,
+}));
 
-export default defineComponent({
-    name: "MainSidebar",
-    props: {},
-    components: {
-        FontAwesomeIcon,
-    },
-    setup() {
-        const router = useRouter();
-        const store = useStore();
-        const icon = computed(() => ({
-            faTachometerAlt,
-            faClipboardList,
-            faChevronDown,
-            faChevronRight,
-            faMousePointer,
-            faCalculator,
-            faPaintBrush,
-            faHandPointUp,
-            faDotCircle,
-            faCircle,
-            faFont,
-            faUser,
-            faBox,
-            faInfo,
-        }));
+const currentRoute = router.currentRoute.value.fullPath;
+const state = reactive<State>({
+    focusedMenu: undefined,
+});
 
-        const currentRoute = router.currentRoute.value.fullPath;
-        const state = reactive<State>({
-            focusedMenu: undefined,
-        });
+const changeFocusedMenu = (selectedPath: string) => {
+    if (selectedPath.startsWith("/")) {
+        return router.push(selectedPath);
+    }
 
-        const changeFocusedMenu = (selectedPath: string) => {
-            if (selectedPath.startsWith("/")) {
-                return router.push(selectedPath);
-            }
+    if (state.focusedMenu !== selectedPath) state.focusedMenu = selectedPath;
+    else state.focusedMenu = undefined;
+};
 
-            if (state.focusedMenu !== selectedPath)
-                state.focusedMenu = selectedPath;
-            else state.focusedMenu = undefined;
-        };
+const flatMapRoute: {
+    [key: string]: Array<unknown>;
+} = {};
 
-        const flatMapRoute: {
-            [key: string]: Array<unknown>;
-        } = {};
+// This is version info fetching from Gitthub
+// const versionInfoURL = process.env.VUE_APP_GH_VERSION_INFO;
+// versionInfoURL && fetch(versionInfoURL).then((data) => data.json()).then(console.log);
 
-        sidebarMenu.forEach((menuItem) => {
-            flatMapRoute[menuItem.id] = [
-                menuItem.path ||
-                    menuItem.subMenu?.flatMap((sub1Item) => {
-                        flatMapRoute[sub1Item.id] = [
-                            sub1Item.path,
-                            sub1Item.subMenu?.map((sub2Item) => sub2Item.path),
-                        ]
-                            .flatMap((item) => item)
-                            .filter(Boolean);
-                        return [
-                            sub1Item.path,
-                            sub1Item.subMenu?.map((sub2Item) => sub2Item.path),
-                        ]
-                            .flatMap((item) => item)
-                            .filter(Boolean);
-                    }),
-            ].flatMap((item) => item);
-        });
-
-        return {
-            state,
-            icon,
-            store,
-            menuList: sidebarMenu,
-            router,
-            currentRoute,
-            flatMapRoute,
-            changeFocusedMenu,
-        };
-    },
+menuList.forEach((menuItem) => {
+    flatMapRoute[menuItem.id] = [
+        menuItem.path ||
+            menuItem.subMenu?.flatMap((sub1Item) => {
+                flatMapRoute[sub1Item.id] = [
+                    sub1Item.path,
+                    sub1Item.subMenu?.map((sub2Item) => sub2Item.path),
+                ]
+                    .flatMap((item) => item)
+                    .filter(Boolean);
+                return [
+                    sub1Item.path,
+                    sub1Item.subMenu?.map((sub2Item) => sub2Item.path),
+                ]
+                    .flatMap((item) => item)
+                    .filter(Boolean);
+            }),
+    ].flatMap((item) => item);
 });
 </script>
 
@@ -324,11 +310,11 @@ ul {
     @apply w-sidebar-collapse;
 }
 
-button {
+nav button {
     @apply h-12 w-full text-left px-4 py-2 rounded-md flex flex-row gap-2 items-center hover:bg-primary-400 focus:bg-primary-400;
 }
 
-button[data-active="true"] {
+nav button[data-active="true"] {
     @apply bg-primary-600;
 }
 

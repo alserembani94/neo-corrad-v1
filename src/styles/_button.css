@@ -1,5 +1,5 @@
 button {
-    @apply transition-all duration-200 ease-in-out focus:outline-none;
+    @apply transition-all duration-200 ease-in-out focus:outline-none text-center;
 }
 
 button:disabled {

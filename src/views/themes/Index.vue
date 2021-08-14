@@ -1015,33 +1015,9 @@
     </layout>
 </template>
 
-<script lang="ts">
-import { defineComponent } from "vue";
+<script setup lang="ts">
 import Layout from "@/components/layouts/Default.vue";
 import Card from "@/components/containers/Card.vue";
 import "vue-code-highlight/themes/duotone-sea.css";
 import "vue-code-highlight/themes/window.css";
-
-export default defineComponent({
-    name: "Themes",
-    components: {
-        Layout,
-        Card,
-        // CodeHighlight,
-    },
-    setup() {
-        const colorProfile = [
-            "primary",
-            "secondary",
-            "info",
-            "success",
-            "warning",
-            "danger",
-            "dark",
-            "light",
-        ];
-        const shades = [100, 200, 300, 400, 500, 600, 700, 800, 900];
-        return { shades, colorProfile };
-    },
-});
 </script>

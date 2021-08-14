@@ -433,8 +433,7 @@
     </layout>
 </template>
 
-<script lang="ts">
-import { defineComponent } from "vue";
+<script setup lang="ts">
 import Layout from "@/components/layouts/Default.vue";
 import Card from "@/components/containers/Card.vue";
 import CodeHighlight from "vue-code-highlight/src/CodeHighlight.vue";
@@ -459,18 +458,4 @@ export default defineComponent({
 });
 <script>`,
 };
-
-export default defineComponent({
-    name: "CardPage",
-    components: {
-        Layout,
-        Card,
-        CodeHighlight,
-    },
-    setup() {
-        return {
-            codeSample,
-        };
-    },
-});
 </script>

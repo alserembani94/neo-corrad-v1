@@ -205,19 +205,7 @@
     </layout>
 </template>
 
-<script lang="ts">
-import { defineComponent } from "vue";
+<script setup lang="ts">
 import Layout from "@/components/layouts/Default.vue";
 import Card from "@/components/containers/Card.vue";
-
-export default defineComponent({
-    name: "TextPage",
-    components: {
-        Layout,
-        Card,
-    },
-    setup() {
-        return {};
-    },
-});
 </script>

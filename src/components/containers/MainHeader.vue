@@ -31,31 +31,18 @@
     </header>
 </template>
 
-<script lang="ts">
-import { defineComponent, computed } from "vue";
+<script setup lang="ts">
+import { computed } from "vue";
 import { useStore } from "@/store";
 import { faBars, faUndoAlt, faHome } from "@fortawesome/free-solid-svg-icons";
 import { FontAwesomeIcon } from "@fortawesome/vue-fontawesome";
 
-export default defineComponent({
-    name: "MainHeader",
-    props: {},
-    components: {
-        FontAwesomeIcon,
-    },
-    setup() {
-        const store = useStore();
-        const icon = computed(() => ({
-            faBars,
-            faUndoAlt,
-            faHome,
-        }));
+const store = useStore();
+const icon = computed(() => ({
+    faBars,
+    faUndoAlt,
+    faHome,
+}));
 
-        return {
-            icon,
-            store,
-            toggleSidebar: () => store.commit("layout/toggleSidebar"),
-        };
-    },
-});
+const toggleSidebar = () => store.commit("layout/toggleSidebar");
 </script>

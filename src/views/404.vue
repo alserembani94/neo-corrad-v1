@@ -1,5 +1,5 @@
 <template>
-    <layout>
+    <Layout>
         <div class="flex flex-col items-center justify-center min-h-full gap-4">
             <img
                 src="https://www.clipartmax.com/png/full/60-605859_spongebob-caveman-angry-png-caveman-spongebob-png.png"
@@ -9,17 +9,9 @@
             <p class="text-9xl font-extrabold">404</p>
             <p>Are you lost?</p>
         </div>
-    </layout>
+    </Layout>
 </template>
 
-<script lang="ts">
-import { defineComponent } from "vue";
+<script setup lang="ts">
 import Layout from "@/components/layouts/Default.vue";
-
-export default defineComponent({
-    name: "Page404",
-    components: {
-        Layout,
-    },
-});
 </script>
