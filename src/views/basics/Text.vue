@@ -184,37 +184,15 @@
 import { defineComponent } from "vue";
 import Layout from "@/components/layouts/Default.vue";
 import Card from "@/components/containers/Card.vue";
-// import {
-//     faVuejs,
-//     faFontAwesome,
-//     faHtml5,
-//     faCss3,
-// } from "@fortawesome/free-brands-svg-icons";
-// import {
-//     FontAwesomeIcon,
-//     FontAwesomeLayers,
-//     FontAwesomeLayersText,
-// } from "@fortawesome/vue-fontawesome";
 
 export default defineComponent({
-    name: "About",
+    name: "Text",
     components: {
         Layout,
         Card,
-        // FontAwesomeIcon,
-        // FontAwesomeLayers,
-        // FontAwesomeLayersText,
     },
     setup() {
-        // const icons = computed(() => ({
-        //     faVuejs,
-        //     faFontAwesome,
-        //     faHtml5,
-        //     faCss3,
-        // }));
-        return {
-            // icons,
-        };
+        return {};
     },
 });
 </script>
@@ -222,9 +200,5 @@ export default defineComponent({
 <style scoped lang="pcss">
 ul {
     @apply list-disc list-inside;
-}
-
-code {
-    @apply px-1 py-0.5 text-sm bg-light-50 rounded-sm;
 }
 </style>

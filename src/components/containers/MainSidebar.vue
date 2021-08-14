@@ -30,7 +30,7 @@
         >
             <img src="@/assets/logo/logo-corrad-white.svg" alt="Corrad" />
         </div>
-        <nav class="py-4 px-2 flex-1">
+        <nav class="py-4 px-2 flex-1 overflow-y-auto">
             <!-- First level navigation -->
             <ul class="flex flex-col gap-1 text-white">
                 <li v-for="menu in menuList" :key="menu.id">
@@ -331,5 +331,10 @@ button[data-active="true"] {
 
 ul.focused {
     @apply max-h-screen;
+}
+
+nav {
+    scrollbar-width: thin;
+    scrollbar-color: #cbd5e0dd transparent;
 }
 </style>

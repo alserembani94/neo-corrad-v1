@@ -28,16 +28,16 @@ export const sidebarMenu: MenuList = [
         icon: "faMousePointer",
         subMenu: [
             {
-                id: "menu-texts",
-                label: "Texts",
+                id: "menu-text",
+                label: "Text",
                 icon: "faFont",
-                path: "/basics/texts",
+                path: "/basics/text",
             },
             {
                 id: "menu-button",
-                label: "Buttons",
+                label: "Button",
                 icon: "faHandPointUp",
-                path: "/basics/buttons",
+                path: "/basics/button",
             },
         ],
     },
@@ -59,9 +59,9 @@ export const sidebarMenu: MenuList = [
         icon: "faBox",
         subMenu: [
             {
-                id: "menu-cards",
-                label: "Cards",
-                path: "/containers/cards",
+                id: "menu-card",
+                label: "Card",
+                path: "/containers/card",
             },
         ],
     },

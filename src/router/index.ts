@@ -18,16 +18,35 @@ const routes: Array<RouteRecordRaw> = [
             import(/* webpackChunkName: "about" */ "../views/About.vue"),
     },
 
-    // For nested routes, use children
+    // TODO: For nested routes, use children
+    // Temporarily declare this way - will improve later
     {
-        path: "/basics/texts",
+        path: "/basics/text",
         name: "Texts",
-        component: () => import("../views/basics/Texts.vue"),
+        component: () => import("../views/basics/Text.vue"),
     },
     {
-        path: "/basics/buttons",
+        path: "/basics/button",
         name: "Buttons",
-        component: () => import("../views/basics/Buttons.vue"),
+        component: () => import("../views/basics/Button.vue"),
+    },
+
+    {
+        path: "/containers/card",
+        name: "Card",
+        component: () => import("../views/containers/Card.vue"),
+    },
+
+    {
+        path: "/layouts/default",
+        name: "Default Layout",
+        component: () => import("../views/layouts/Default.vue"),
+    },
+
+    {
+        path: "/themes",
+        name: "Themes",
+        component: () => import("../views/themes/Index.vue"),
     },
 
     // For 404 Error Page

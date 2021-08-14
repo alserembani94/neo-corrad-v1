@@ -7,7 +7,17 @@
             <card title="Introduction">
                 <p>
                     There are several button styles provided out of the box for
-                    you.
+                    you. To use it, you can simply call
+                    <code>button</code> element, and include class names as
+                    below.
+
+                    <br />
+
+                    Here is the usage example in the code.
+
+                    <code-highlight languange="typescript">
+                        {{ codeSample.importCard }}
+                    </code-highlight>
                 </p>
             </card>
             <card title="Styles">
@@ -509,15 +519,29 @@
 import { defineComponent } from "vue";
 import Layout from "@/components/layouts/Default.vue";
 import Card from "@/components/containers/Card.vue";
+import CodeHighlight from "vue-code-highlight/src/CodeHighlight.vue";
+import "vue-code-highlight/themes/duotone-sea.css";
+import "vue-code-highlight/themes/window.css";
+
+const codeSample = {
+    importCard: `<template>
+    <button class="btn-primary btn-base">
+        Submit
+    </button>
+</template>`,
+};
 
 export default defineComponent({
     name: "About",
     components: {
+        CodeHighlight,
         Layout,
         Card,
     },
     setup() {
-        return {};
+        return {
+            codeSample,
+        };
     },
 });
 </script>
@@ -525,9 +549,5 @@ export default defineComponent({
 <style scoped lang="pcss">
 ul {
     @apply list-disc list-inside;
-}
-
-code {
-    @apply px-1 py-0.5 text-sm bg-light-50 rounded-sm;
 }
 </style>

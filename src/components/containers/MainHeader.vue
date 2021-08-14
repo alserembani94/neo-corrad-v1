@@ -15,13 +15,13 @@
         "
     >
         <div class="flex flex-row gap-6">
-            <button @click="toggleSidebar">
+            <button class="p-2" @click="toggleSidebar">
                 <font-awesome-icon :icon="icon.faBars" />
             </button>
-            <button>
+            <button class="p-2">
                 <font-awesome-icon :icon="icon.faUndoAlt" flip="horizontal" />
             </button>
-            <button>
+            <button class="p-2">
                 <font-awesome-icon :icon="icon.faHome" />
             </button>
         </div>

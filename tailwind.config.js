@@ -74,6 +74,7 @@ module.exports = {
         },
         fontFamily: {
             sans: ["Poppins", ...defaultTheme.fontFamily.sans],
+            mono: ["Fira Code", ...defaultTheme.fontFamily.mono],
         },
         extend: {
             spacing: {
@@ -86,6 +87,9 @@ module.exports = {
             },
             minHeight: {
                 80: "20rem",
+            },
+            maxHeight: {
+                "2/3": "66.7%",
             },
         },
     },
