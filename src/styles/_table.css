@@ -1,0 +1,10 @@
+/* Table Section */
+thead {
+    @apply bg-light-400 text-dark-400 uppercase font-semibold;
+}
+tr {
+    @apply border-b border-t border-light-500 hover:bg-light-300;
+}
+td {
+    @apply p-4;
+}

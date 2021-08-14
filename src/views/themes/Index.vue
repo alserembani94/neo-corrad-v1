@@ -26,6 +26,55 @@
                 </p>
             </card>
         </section>
+
+        <section class="grid grid-cols-1 gap-8">
+            <card title="Colors">
+                <p>
+                    We are extending existing Tailwind Colors profile,
+                    handpicked just for you.
+                </p>
+                <div
+                    v-for="color in colorProfile"
+                    :key="`color-${color}`"
+                    class="flex flex-row flex-wrap"
+                >
+                    <p class="w-40 mt-4">
+                        <code>{{ color }}</code>
+                    </p>
+                    <div class="flex flex-row flex-wrap gap-3">
+                        <div
+                            v-for="shade in shades"
+                            :key="`color-${color}-${shade}`"
+                            class="flex flex-col items-center"
+                        >
+                            <div
+                                class="w-16 h-16 rounded-lg shadow-md"
+                                :class="`bg-${color}-${shade}`"
+                            />
+                            <p class="text-sm mt-2">{{ shade }}</p>
+                        </div>
+                    </div>
+                </div>
+                <p>
+                    There are also other colors that are declared for the sake
+                    of consistency.
+                </p>
+                <div class="flex flex-row flex-wrap gap-3">
+                    <div class="flex flex-col items-center">
+                        <div class="w-16 h-16 rounded-lg bg-white shadow-md" />
+                        <p class="text-sm mt-2"><code>white</code></p>
+                    </div>
+                    <div class="flex flex-col items-center">
+                        <div class="w-16 h-16 rounded-lg bg-black shadow-md" />
+                        <p class="text-sm mt-2"><code>black</code></p>
+                    </div>
+                    <div class="flex flex-col items-center">
+                        <div class="w-16 h-16 rounded-lg bg-baseBg shadow-md" />
+                        <p class="text-sm mt-2"><code>baseBg</code></p>
+                    </div>
+                </div>
+            </card>
+        </section>
     </layout>
 </template>
 
@@ -44,7 +93,18 @@ export default defineComponent({
         // CodeHighlight,
     },
     setup() {
-        return {};
+        const colorProfile = [
+            "primary",
+            "secondary",
+            "info",
+            "success",
+            "warning",
+            "danger",
+            "dark",
+            "light",
+        ];
+        const shades = [100, 200, 300, 400, 500, 600, 700, 800, 900];
+        return { shades, colorProfile };
     },
 });
 </script>

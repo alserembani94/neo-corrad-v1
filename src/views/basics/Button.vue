@@ -3,6 +3,7 @@
         <section class="flex flex-col gap-2">
             <h1>Buttons</h1>
         </section>
+        <!-- <button class="btn-base ring-2 ring-primary-500 text-primary-500 hover:bg-primary-500 hover:text-white">Hello</button> -->
         <section class="flex flex-col gap-8">
             <card title="Introduction">
                 <p>
@@ -223,15 +224,17 @@
                             <!-- For outline button -->
                             <tr>
                                 <td rowspan="8">Outline Style</td>
-                                <td><code>btn-primary</code></td>
+                                <td><code>btn-outline-primary</code></td>
                                 <td>
-                                    <button class="btn-primary btn-base">
+                                    <button
+                                        class="btn-outline-primary btn-base"
+                                    >
                                         Button
                                     </button>
                                 </td>
                                 <td>
                                     <button
-                                        class="btn-primary btn-base"
+                                        class="btn-outline-primary btn-base"
                                         disabled
                                     >
                                         Button
@@ -239,7 +242,7 @@
                                 </td>
                                 <td>
                                     <button
-                                        class="btn-primary btn-base"
+                                        class="btn-outline-primary btn-base"
                                         data-active="true"
                                     >
                                         Button
@@ -247,15 +250,17 @@
                                 </td>
                             </tr>
                             <tr>
-                                <td><code>btn-secondary</code></td>
+                                <td><code>btn-outline-secondary</code></td>
                                 <td>
-                                    <button class="btn-secondary btn-base">
+                                    <button
+                                        class="btn-outline-secondary btn-base"
+                                    >
                                         Button
                                     </button>
                                 </td>
                                 <td>
                                     <button
-                                        class="btn-secondary btn-base"
+                                        class="btn-outline-secondary btn-base"
                                         disabled
                                     >
                                         Button
@@ -263,7 +268,7 @@
                                 </td>
                                 <td>
                                     <button
-                                        class="btn-secondary btn-base"
+                                        class="btn-outline-secondary btn-base"
                                         data-active="true"
                                     >
                                         Button
@@ -271,36 +276,15 @@
                                 </td>
                             </tr>
                             <tr>
-                                <td><code>btn-info</code></td>
+                                <td><code>btn-outline-info</code></td>
                                 <td>
-                                    <button class="btn-info btn-base">
-                                        Button
-                                    </button>
-                                </td>
-                                <td>
-                                    <button class="btn-info btn-base" disabled>
+                                    <button class="btn-outline-info btn-base">
                                         Button
                                     </button>
                                 </td>
                                 <td>
                                     <button
-                                        class="btn-info btn-base"
-                                        data-active="true"
-                                    >
-                                        Button
-                                    </button>
-                                </td>
-                            </tr>
-                            <tr>
-                                <td><code>btn-success</code></td>
-                                <td>
-                                    <button class="btn-success btn-base">
-                                        Button
-                                    </button>
-                                </td>
-                                <td>
-                                    <button
-                                        class="btn-success btn-base"
+                                        class="btn-outline-info btn-base"
                                         disabled
                                     >
                                         Button
@@ -308,7 +292,7 @@
                                 </td>
                                 <td>
                                     <button
-                                        class="btn-success btn-base"
+                                        class="btn-outline-info btn-base"
                                         data-active="true"
                                     >
                                         Button
@@ -316,15 +300,17 @@
                                 </td>
                             </tr>
                             <tr>
-                                <td><code>btn-warning</code></td>
+                                <td><code>btn-outline-success</code></td>
                                 <td>
-                                    <button class="btn-warning btn-base">
+                                    <button
+                                        class="btn-outline-success btn-base"
+                                    >
                                         Button
                                     </button>
                                 </td>
                                 <td>
                                     <button
-                                        class="btn-warning btn-base"
+                                        class="btn-outline-success btn-base"
                                         disabled
                                     >
                                         Button
@@ -332,7 +318,7 @@
                                 </td>
                                 <td>
                                     <button
-                                        class="btn-warning btn-base"
+                                        class="btn-outline-success btn-base"
                                         data-active="true"
                                     >
                                         Button
@@ -340,15 +326,17 @@
                                 </td>
                             </tr>
                             <tr>
-                                <td><code>btn-danger</code></td>
+                                <td><code>btn-outline-warning</code></td>
                                 <td>
-                                    <button class="btn-danger btn-base">
+                                    <button
+                                        class="btn-outline-warning btn-base"
+                                    >
                                         Button
                                     </button>
                                 </td>
                                 <td>
                                     <button
-                                        class="btn-danger btn-base"
+                                        class="btn-outline-warning btn-base"
                                         disabled
                                     >
                                         Button
@@ -356,7 +344,7 @@
                                 </td>
                                 <td>
                                     <button
-                                        class="btn-danger btn-base"
+                                        class="btn-outline-warning btn-base"
                                         data-active="true"
                                     >
                                         Button
@@ -364,20 +352,23 @@
                                 </td>
                             </tr>
                             <tr>
-                                <td><code>btn-dark</code></td>
+                                <td><code>btn-outline-danger</code></td>
                                 <td>
-                                    <button class="btn-dark btn-base">
-                                        Button
-                                    </button>
-                                </td>
-                                <td>
-                                    <button class="btn-dark btn-base" disabled>
+                                    <button class="btn-outline-danger btn-base">
                                         Button
                                     </button>
                                 </td>
                                 <td>
                                     <button
-                                        class="btn-dark btn-base"
+                                        class="btn-outline-danger btn-base"
+                                        disabled
+                                    >
+                                        Button
+                                    </button>
+                                </td>
+                                <td>
+                                    <button
+                                        class="btn-outline-danger btn-base"
                                         data-active="true"
                                     >
                                         Button
@@ -385,20 +376,47 @@
                                 </td>
                             </tr>
                             <tr>
-                                <td><code>btn-light</code></td>
+                                <td><code>btn-outline-dark</code></td>
                                 <td>
-                                    <button class="btn-light btn-base">
-                                        Button
-                                    </button>
-                                </td>
-                                <td>
-                                    <button class="btn-light btn-base" disabled>
+                                    <button class="btn-outline-dark btn-base">
                                         Button
                                     </button>
                                 </td>
                                 <td>
                                     <button
-                                        class="btn-light btn-base"
+                                        class="btn-outline-dark btn-base"
+                                        disabled
+                                    >
+                                        Button
+                                    </button>
+                                </td>
+                                <td>
+                                    <button
+                                        class="btn-outline-dark btn-base"
+                                        data-active="true"
+                                    >
+                                        Button
+                                    </button>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td><code>btn-outline-light</code></td>
+                                <td>
+                                    <button class="btn-outline-light btn-base">
+                                        Button
+                                    </button>
+                                </td>
+                                <td>
+                                    <button
+                                        class="btn-outline-light btn-base"
+                                        disabled
+                                    >
+                                        Button
+                                    </button>
+                                </td>
+                                <td>
+                                    <button
+                                        class="btn-outline-light btn-base"
                                         data-active="true"
                                     >
                                         Button
@@ -545,9 +563,3 @@ export default defineComponent({
     },
 });
 </script>
-
-<style scoped lang="pcss">
-ul {
-    @apply list-disc list-inside;
-}
-</style>

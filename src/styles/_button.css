@@ -1,0 +1,140 @@
+button {
+    @apply transition-all duration-200 ease-in-out focus:outline-none;
+}
+
+button:disabled {
+    @apply cursor-not-allowed;
+}
+
+.btn-base {
+    @apply px-6 py-2 rounded;
+}
+
+.btn-lg {
+    @apply text-lg px-8 py-2 rounded;
+}
+
+.btn-sm {
+    @apply text-sm px-4 py-2 rounded;
+}
+
+.btn-primary {
+    @apply bg-primary-500 hover:bg-primary-400 active:bg-primary-600 disabled:bg-primary-300 focus:ring-primary-600 focus:ring-2 focus:bg-primary-400;
+}
+.btn-primary[data-active=true] {
+    @apply bg-primary-600;
+}
+
+.btn-secondary {
+    @apply bg-secondary-500 hover:bg-secondary-400 active:bg-secondary-600 disabled:bg-secondary-300 focus:ring-secondary-600 focus:ring-2 focus:bg-secondary-400;
+}
+.btn-secondary[data-active=true] {
+    @apply bg-secondary-600;
+}
+
+.btn-info {
+    @apply bg-info-500 hover:bg-info-400 active:bg-info-600 disabled:bg-info-300 focus:ring-info-600 focus:ring-2 focus:bg-info-400;
+}
+.btn-info[data-active=true] {
+    @apply bg-info-600;
+}
+
+.btn-success {
+    @apply bg-success-500 hover:bg-success-400 active:bg-success-600 disabled:bg-success-300 focus:ring-success-600 focus:ring-2 focus:bg-success-400;
+}
+.btn-success[data-active=true] {
+    @apply bg-success-600;
+}
+
+.btn-warning {
+    @apply bg-warning-500 hover:bg-warning-400 active:bg-warning-600 disabled:bg-warning-300 disabled:text-dark-300 focus:ring-warning-600 focus:ring-2 focus:bg-warning-400;
+}
+.btn-warning[data-active=true] {
+    @apply bg-warning-600;
+}
+
+.btn-danger {
+    @apply bg-danger-500 hover:bg-danger-400 active:bg-danger-600 disabled:bg-danger-300 focus:ring-danger-600 focus:ring-2 focus:bg-danger-400;
+}
+.btn-danger[data-active=true] {
+    @apply bg-danger-600;
+}
+
+.btn-dark {
+    @apply bg-dark-500 hover:bg-dark-400 active:bg-dark-600 disabled:bg-dark-300 focus:ring-dark-600 focus:ring-2 focus:bg-dark-400;
+}
+.btn-dark[data-active=true] {
+    @apply bg-dark-600;
+}
+
+.btn-light {
+    @apply bg-light-500 hover:bg-light-400 hover:ring-1 hover:ring-light-600 active:bg-light-600 disabled:bg-light-300 focus:ring-light-600 focus:ring-2 focus:bg-light-400;
+}
+.btn-light[data-active=true] {
+    @apply bg-light-600;
+}
+
+.btn-primary,
+.btn-secondary,
+.btn-info,
+.btn-success,
+.btn-danger,
+.btn-dark {
+    @apply text-white;
+}
+
+.btn-warning,
+.btn-light {
+    @apply text-black;
+}
+
+/* OUTLINE */           
+
+.btn-outline-primary {
+    @apply ring-2 ring-primary-500 text-primary-500 hover:bg-primary-500 hover:text-white disabled:ring-primary-200 disabled:text-primary-200 disabled:bg-transparent focus:bg-primary-500 focus:text-white;
+}
+.btn-outline-primary[data-active=true] {
+    @apply ring-primary-700 text-primary-700 hover:bg-primary-700 hover:text-white;
+}
+.btn-outline-secondary {
+    @apply ring-2 ring-secondary-500 text-secondary-500 hover:bg-secondary-500 hover:text-white disabled:ring-secondary-200 disabled:text-secondary-200 disabled:bg-transparent focus:bg-secondary-500 focus:text-white;
+}
+.btn-outline-secondary[data-active=true] {
+    @apply ring-secondary-700 text-secondary-700 hover:bg-secondary-700 hover:text-white;
+}
+.btn-outline-info {
+    @apply ring-2 ring-info-500 text-info-500 hover:bg-info-500 hover:text-white disabled:ring-info-200 disabled:text-info-200 disabled:bg-transparent focus:bg-info-500 focus:text-white;
+}
+.btn-outline-info[data-active=true] {
+    @apply ring-info-700 text-info-700 hover:bg-info-700 hover:text-white;
+}
+.btn-outline-success {
+    @apply ring-2 ring-success-500 text-success-500 hover:bg-success-500 hover:text-white disabled:ring-success-200 disabled:text-success-200 disabled:bg-transparent focus:bg-success-500 focus:text-white;
+}
+.btn-outline-success[data-active=true] {
+    @apply ring-success-700 text-success-700 hover:bg-success-700 hover:text-white;
+}
+.btn-outline-warning {
+    @apply ring-2 ring-warning-500 text-warning-500 hover:bg-warning-500 hover:text-white disabled:ring-warning-200 disabled:text-warning-200 disabled:bg-transparent focus:bg-warning-500 focus:text-white;
+}
+.btn-outline-warning[data-active=true] {
+    @apply ring-warning-700 text-warning-700 hover:bg-warning-700 hover:text-white;
+}
+.btn-outline-danger {
+    @apply ring-2 ring-danger-500 text-danger-500 hover:bg-danger-500 hover:text-white disabled:ring-danger-200 disabled:text-danger-200 disabled:bg-transparent focus:bg-danger-500 focus:text-white;
+}
+.btn-outline-danger[data-active=true] {
+    @apply ring-danger-700 text-danger-700 hover:bg-danger-700 hover:text-white;
+}
+.btn-outline-dark {
+    @apply ring-2 ring-dark-500 text-dark-500 hover:bg-dark-500 hover:text-white disabled:ring-dark-200 disabled:text-dark-200 disabled:bg-transparent focus:bg-dark-500 focus:text-white;
+}
+.btn-outline-dark[data-active=true] {
+    @apply ring-dark-700 text-dark-700 hover:bg-dark-700 hover:text-white;
+}
+.btn-outline-light {
+    @apply ring-2 ring-light-700 text-light-700 hover:bg-light-700 hover:text-white disabled:ring-light-500 disabled:text-light-500 disabled:bg-transparent focus:bg-light-700 focus:text-white;
+}
+.btn-outline-light[data-active=true] {
+    @apply ring-light-900 text-light-900 hover:bg-light-900 hover:text-white;
+}

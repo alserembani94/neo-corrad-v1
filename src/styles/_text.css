@@ -1,0 +1,76 @@
+code {
+    font-family: theme('fontFamily.mono') !important;
+    @apply px-1 py-0.5 text-sm bg-light-400 rounded-sm;
+}
+
+/* For font sizes, can refer here: https://tailwindcss.com/docs/font-size */
+p, ul, ol {
+    @apply leading-7;
+}
+h1 {
+    @apply text-4xl;
+}
+
+h2 {
+    @apply text-3xl;
+}
+
+h3 {
+    @apply text-2xl;
+}
+
+h4 {
+    @apply text-xl;
+}
+
+h5 {
+    @apply text-lg;
+}
+
+p,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+li,
+input,
+button,
+a {
+    @apply font-sans antialiased;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+    @apply font-semibold;
+}
+
+br {
+    @apply mb-6;
+}
+
+ol,
+ul {
+    @apply list-inside;
+}
+
+ul {
+    @apply list-disc;
+}
+
+a {
+    @apply text-primary-500 underline hover:text-primary-400 visited:text-primary-600;
+}
+
+br {
+    @apply mb-6;
+}
+
+a {
+    @apply text-primary-500 underline hover:text-primary-400 visited:text-primary-600;
+}

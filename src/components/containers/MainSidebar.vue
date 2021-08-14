@@ -2,7 +2,7 @@
     <section
         class="
             w-0
-            bg-primary-50
+            bg-primary-500
             md:w-sidebar-expand
             h-screen
             sticky
@@ -23,7 +23,7 @@
                 flex
                 items-center
                 justify-center
-                text-primary-100
+                text-primary-700
                 py-2
                 px-12
             "
@@ -32,7 +32,7 @@
         </div>
         <nav class="py-4 px-2 flex-1 overflow-y-auto">
             <!-- First level navigation -->
-            <ul class="flex flex-col gap-1 text-white">
+            <ul class="flex flex-col gap-2 text-white">
                 <li v-for="menu in menuList" :key="menu.id">
                     <button
                         :data-active="currentRoute === menu.path"
@@ -65,6 +65,8 @@
                             overflow-hidden
                             transition-all
                             duration-200
+                            flex flex-col
+                            gap-2
                         "
                         :class="{
                             focused:
@@ -141,6 +143,8 @@
                                     overflow-hidden
                                     transition-all
                                     duration-200
+                                    flex flex-col
+                                    gap-2
                                 "
                                 :class="{
                                     focused:
@@ -313,16 +317,19 @@ export default defineComponent({
 </script>
 
 <style scoped>
+ul {
+    @apply list-none;
+}
 .collapse {
     @apply w-sidebar-collapse;
 }
 
 button {
-    @apply h-12 w-full text-left px-4 py-2 rounded-md flex flex-row gap-2 items-center hover:bg-primary-25 focus:bg-primary-25;
+    @apply h-12 w-full text-left px-4 py-2 rounded-md flex flex-row gap-2 items-center hover:bg-primary-400 focus:bg-primary-400;
 }
 
 button[data-active="true"] {
-    @apply bg-primary-75;
+    @apply bg-primary-600;
 }
 
 /* button:focus ~ ul {

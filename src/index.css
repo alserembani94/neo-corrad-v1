@@ -8,64 +8,85 @@
 
     --body-background: #F6F6F7;
 
+    --primary-100: #D6E3F8;
+    --primary-200: #ADC7F1;
+    --primary-300: #84ABEA;
+    --primary-400: #5B8FE3;
+    --primary-500: #3273DC;
+    --primary-600: #285CB0;
+    --primary-700: #1E4584;
+    --primary-800: #142E58;
+    --primary-900: #0A172C;
 
-    --primary-0: #99B9EE;
-    --primary-25: #5B8FE3;
-    --primary-50: #3273DC;
-    --primary-75: #285CB0;
-    --primary-100: #1E4584;
+    --secondary-100: #CCF6F0;
+    --secondary-200: #99EDE0;
+    --secondary-300: #66E3D1;
+    --secondary-400: #33DAC1;
+    --secondary-500: #00D1B2;
+    --secondary-600: #00A78E;
+    --secondary-700: #007D6B;
+    --secondary-800: #005447;
+    --secondary-900: #002A24;
 
-    --secondary-0: #80E8D9;
-    --secondary-25: #33DAC1;
-    --secondary-50: #00D1B2;
-    --secondary-75: #00A78E;
-    --secondary-100: #007D6B;
+    --info-100: #D2EBFC;
+    --info-200: #A6D7F8;
+    --info-300: #79C4F5;
+    --info-400: #4DB0F1;
+    --info-500: #209CEE;
+    --info-600: #1A7DBE;
+    --info-700: #135E8F;
+    --info-800: #0D3E5F;
+    --info-900: #061F30;
 
-    --info-0: #79C4F5;
-    --info-25: #4DB0F1;
-    --info-50: #209CEE;
-    --info-75: #1A7DBE;
-    --info-100: #135E8F;
+    --dark-100: #D7D7D7;
+    --dark-200: #AFAFAF;
+    --dark-300: #868686;
+    --dark-400: #5E5E5E;
+    --dark-500: #363636;
+    --dark-600: #2B2B2B;
+    --dark-700: #202020;
+    --dark-800: #161616;
+    --dark-900: #0B0B0B;
 
-    --light-0: #F9F9F9;
-    --light-25: #F7F7F7;
-    --light-50: #F5F5F5;
-    --light-75: #C4C4C4;
-    --light-100: #939393;
+    --light-100: #FEFEFE;
+    --light-200: #FCFDFD;
+    --light-300: #FBFBFC;
+    --light-400: #F9FAFB;
+    --light-500: #F8F9FA;
+    --light-600: #C6C7C8;
+    --light-700: #959596;
+    --light-800: #636464;
+    --light-900: #323232;
 
-    --dark-0: #868686;
-    --dark-25: #5E5E5E;
-    --dark-50: #363636;
-    --dark-75: #2B2B2B;
-    --dark-100: #202020;
+    --success-100: #D3F6DF;
+    --success-200: #A7EDBF;
+    --success-300: #7BE3A0;
+    --success-400: #4FDA80;
+    --success-500: #23D160;
+    --success-600: #1CA74D;
+    --success-700: #157D3A;
+    --success-800: #0E5426;
+    --success-900: #072A13;
 
-    --success-0: #7BE3A0;
-    --success-25: #4FDA80;
-    --success-50: #23D160;
-    --success-75: #1CA74D;
-    --success-100: #157D3A;
+    --warning-100: #FFF8DD;
+    --warning-200: #FFF1BC;
+    --warning-300: #FFEB9A;
+    --warning-400: #FFE479;
+    --warning-500: #FFDD57;
+    --warning-600: #CCB146;
+    --warning-700: #998534;
+    --warning-800: #665823;
+    --warning-900: #332C11;
 
-    --warning-0: #FFEB9A;
-    --warning-25: #FFE479;
-    --warning-50: #FFDD57;
-    --warning-75: #CCB146;
-    --warning-100: #998534;
-
-    --danger-0: #FF88A0;
-    --danger-25: #FF6080;
-    --danger-50: #FF3860;
-    --danger-75: #CC2D4D;
-    --danger-100: #99223A;
-
-    --visited: #C301E2;
-
-    --button-padding-small: 0.375rem 0.75rem;
-    --button-padding-normal: 0.5rem 1.0rem;
-    --button-padding-large: 0.625rem 1.25rem;
-    --button-font-small: 0.75rem;
-    --button-font-normal: 1.0rem;
-    --button-font-large: 1.25rem;
-    --button-border-radius: 4px;
+    --danger-100: #FFD7DF;
+    --danger-200: #FFAFBF;
+    --danger-300: #FF88A0;
+    --danger-400: #FF6080;
+    --danger-500: #FF3860;
+    --danger-600: #CC2D4D;
+    --danger-700: #99223A;
+    --danger-800: #661626;
+    --danger-900: #330B13;
 
     --sidebar-width-expand: 250px;
     --sidebar-width-collapse: 90px;
@@ -103,168 +124,10 @@
 @tailwind utilities;
 @tailwind variants;
 
-code {
-    font-family: theme('fontFamily.mono') !important;
-    @apply px-1 py-0.5 text-sm bg-light-50 rounded-sm;
-}
-
-p,
-h1,
-h2,
-h3,
-h4,
-h5,
-h6,
-li,
-input,
-button,
-a {
-    @apply font-sans antialiased;
-}
-
-h1,
-h2,
-h3,
-h4,
-h5,
-h6 {
-    @apply font-semibold;
-}
-
-/* For font sizes, can refer here: https://tailwindcss.com/docs/font-size */
-p, ul, ol {
-    @apply leading-7;
-}
-h1 {
-    @apply text-4xl;
-}
-
-h2 {
-    @apply text-3xl;
-}
-
-h3 {
-    @apply text-2xl;
-}
-
-h4 {
-    @apply text-xl;
-}
-
-h5 {
-    @apply text-lg;
-}
-
-br {
-    @apply mb-6;
-}
-
-ol,
-ul {
-    @apply list-none;
-}
-
-a {
-    @apply text-primary-50 underline hover:text-primary-25 visited:text-primary-100;
-}
+@import "styles/_text.css";
+@import "styles/_button.css";
+@import "styles/_table.css";
 
 input {
-    @apply placeholder-light-75;
-}
-
-button {
-    @apply transition-colors duration-200 ease-in-out focus:outline-none;
-}
-
-.btn-base {
-    @apply px-6 py-2 rounded;
-}
-
-.btn-lg {
-    @apply text-lg px-8 py-2 rounded;
-}
-
-.btn-sm {
-    @apply text-sm px-4 py-2 rounded;
-}
-
-.btn-primary {
-    @apply bg-primary-50 hover:bg-primary-25 active:bg-primary-75 disabled:bg-primary-0 focus:ring-primary-75 focus:ring-2 focus:bg-primary-25;
-}
-.btn-primary[data-active=true] {
-    @apply bg-primary-75;
-}
-
-.btn-secondary {
-    @apply bg-secondary-50 hover:bg-secondary-25 active:bg-secondary-75 disabled:bg-secondary-0 focus:ring-secondary-75 focus:ring-2 focus:bg-secondary-25;
-}
-.btn-secondary[data-active=true] {
-    @apply bg-secondary-75;
-}
-
-.btn-info {
-    @apply bg-info-50 hover:bg-info-25 active:bg-info-75 disabled:bg-info-0 focus:ring-info-75 focus:ring-2 focus:bg-info-25;
-}
-.btn-info[data-active=true] {
-    @apply bg-info-75;
-}
-
-.btn-success {
-    @apply bg-success-50 hover:bg-success-25 active:bg-success-75 disabled:bg-success-0 focus:ring-success-75 focus:ring-2 focus:bg-success-25;
-}
-.btn-success[data-active=true] {
-    @apply bg-success-75;
-}
-
-.btn-warning {
-    @apply bg-warning-50 hover:bg-warning-25 active:bg-warning-75 disabled:bg-warning-0 disabled:text-dark-0 focus:ring-warning-75 focus:ring-2 focus:bg-warning-25;
-}
-.btn-warning[data-active=true] {
-    @apply bg-warning-75;
-}
-
-.btn-danger {
-    @apply bg-danger-50 hover:bg-danger-25 active:bg-danger-75 disabled:bg-danger-0 focus:ring-danger-75 focus:ring-2 focus:bg-danger-25;
-}
-.btn-danger[data-active=true] {
-    @apply bg-danger-75;
-}
-
-.btn-dark {
-    @apply bg-dark-50 hover:bg-dark-25 active:bg-dark-75 disabled:bg-dark-0 focus:ring-dark-75 focus:ring-2 focus:bg-dark-25;
-}
-.btn-dark[data-active=true] {
-    @apply bg-dark-75;
-}
-
-.btn-light {
-    @apply bg-light-50 hover:bg-light-25 hover:ring-1 hover:ring-light-75 active:bg-light-75 disabled:bg-light-0 focus:ring-light-75 focus:ring-2 focus:bg-light-25;
-}
-.btn-light[data-active=true] {
-    @apply bg-light-75;
-}
-
-.btn-primary,
-.btn-secondary,
-.btn-info,
-.btn-success,
-.btn-danger,
-.btn-dark {
-    @apply text-white;
-}
-
-.btn-warning,
-.btn-light {
-    @apply text-black;
-}
-
-/* Table Section */
-thead {
-    @apply bg-light-25 text-dark-25 uppercase font-semibold;
-}
-tr {
-    @apply border-b border-t border-light-50 hover:bg-light-0;
-}
-td {
-    @apply p-4;
+    @apply placeholder-light-600;
 }

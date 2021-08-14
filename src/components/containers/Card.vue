@@ -17,7 +17,7 @@
         <div class="flex flex-row justify-between items-start">
             <div class="flex flex-col">
                 <h3 v-if="title">{{ title }}</h3>
-                <p class="text-light-100" :class="[cardType]" v-if="subtitle">
+                <p class="text-light-700" :class="[cardType]" v-if="subtitle">
                     {{ subtitle }}
                 </p>
             </div>
@@ -29,7 +29,7 @@
                 <font-awesome-icon :icon="icon.faTimes" transform="grow-5" />
             </button>
         </div>
-        <hr class="text-light-50" :class="[cardType]" />
+        <hr class="text-light-500" :class="[cardType]" />
         <div class="flex flex-col gap-4">
             <slot />
         </div>
@@ -100,34 +100,34 @@ export default defineComponent({
 
 <style scoped lang="pcss">
 .primary {
-    @apply bg-primary-50 text-white;
+    @apply bg-primary-300 text-white;
 }
 
 .secondary {
-    @apply bg-secondary-50 text-white;
+    @apply bg-secondary-300 text-white;
 }
 
 .info {
-    @apply bg-info-50 text-white;
+    @apply bg-info-300 text-white;
 }
 
 .success {
-    @apply bg-success-50 text-white;
+    @apply bg-success-300 text-white;
 }
 
 .warning {
-    @apply bg-warning-50 text-black;
+    @apply bg-warning-300 text-black;
 }
 
 .danger {
-    @apply bg-danger-50 text-white;
+    @apply bg-danger-300 text-white;
 }
 
 .dark {
-    @apply bg-dark-50 text-white;
+    @apply bg-dark-300 text-white;
 }
 
 .light {
-    @apply bg-light-50;
+    @apply bg-light-300;
 }
 </style>

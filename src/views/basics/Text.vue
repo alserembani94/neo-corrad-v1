@@ -25,6 +25,9 @@
                         <code>&lt;strong&gt;</code>, <code>&lt;em&gt;</code> -
                         for text styles
                     </li>
+                    <li>
+                        <code>&lt;code&gt;</code> - for code / monospaced text
+                    </li>
                 </ul>
                 <p>
                     ...and so on. You can learn
@@ -44,8 +47,18 @@
 
                     <br />
 
-                    Here are the standards used for each text elements:
+                    The font used for each category is defined inside
+                    <code>tailwind.config.js</code>. The default fonts are as
+                    follows:
                 </p>
+
+                <ul>
+                    <li class="font-sans"><code>sans</code>: Poppins</li>
+                    <li class="font-serif"><code>serif</code>: Georgia</li>
+                    <li class="font-mono"><code>mono</code>: Fira Code</li>
+                </ul>
+
+                <p>Here are the standards used for each text elements:</p>
                 <div class="overflow-x-auto">
                     <table class="w-full">
                         <thead>
@@ -58,13 +71,25 @@
                         </thead>
                         <tbody>
                             <!-- For <p> -->
-                            <tr data-row="elem-p">
+                            <tr>
                                 <td rowspan="2"><code>&lt;p&gt;</code></td>
                                 <td><code>font-size</code></td>
                                 <td><code>1rem</code></td>
                                 <td><code>text-base</code></td>
                             </tr>
-                            <tr data-row="elem-p">
+                            <tr>
+                                <td><code>line-height</code></td>
+                                <td><code>1.75rem</code></td>
+                                <td><code>leading-7</code></td>
+                            </tr>
+                            <!-- For <code> -->
+                            <tr>
+                                <td rowspan="2"><code>&lt;code&gt;</code></td>
+                                <td><code>font-size</code></td>
+                                <td><code>1rem</code></td>
+                                <td><code>text-base</code></td>
+                            </tr>
+                            <tr>
                                 <td><code>line-height</code></td>
                                 <td><code>1.75rem</code></td>
                                 <td><code>leading-7</code></td>
@@ -196,9 +221,3 @@ export default defineComponent({
     },
 });
 </script>
-
-<style scoped lang="pcss">
-ul {
-    @apply list-disc list-inside;
-}
-</style>

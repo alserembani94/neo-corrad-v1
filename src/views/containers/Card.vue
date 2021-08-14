@@ -200,8 +200,12 @@
                     nulla facilisi.
                 </p>
             </card>
-            <card title="Card with Grid" cardClass="">
-                <p>
+            <card
+                title="Card with Grid"
+                subtitle="...with line-clamp!"
+                cardClass=""
+            >
+                <p class="line-clamp-6">
                     Lorem ipsum dolor sit amet, consectetuer adipiscing elit,
                     sed diam nonummy nibh euismod tincidunt ut laoreet dolore
                     magna aliquam erat volutpat. Ut wisi enim ad minim veniam,
@@ -249,7 +253,7 @@
                     nulla facilisi.
                 </p>
             </card>
-            <card title="Card with Grid" cardClass="">
+            <card title="Card with Grid">
                 <p>
                     Lorem ipsum dolor sit amet, consectetuer adipiscing elit,
                     sed diam nonummy nibh euismod tincidunt ut laoreet dolore
@@ -267,7 +271,6 @@
         <section class="flex flex-row gap-8 flex-wrap">
             <card
                 title="Styles Cards: Primary"
-                subtitle="Not styled yet"
                 cardClass="flex-1 min-w-sm"
                 cardType="primary"
             >
@@ -286,7 +289,6 @@
             </card>
             <card
                 title="Styles Cards: Secondary"
-                subtitle="Not styled yet"
                 cardClass="flex-1 min-w-sm"
                 cardType="secondary"
             >
@@ -307,7 +309,6 @@
         <section class="flex flex-row gap-8 flex-wrap">
             <card
                 title="Styles Cards: Info"
-                subtitle="Not styled yet"
                 cardClass="flex-1 min-w-sm"
                 cardType="info"
             >
@@ -326,7 +327,6 @@
             </card>
             <card
                 title="Styles Cards: Success"
-                subtitle="Not styled yet"
                 cardClass="flex-1 min-w-sm"
                 cardType="success"
             >
@@ -347,7 +347,6 @@
         <section class="flex flex-row gap-8 flex-wrap">
             <card
                 title="Styles Cards: Warning"
-                subtitle="Not styled yet"
                 cardClass="flex-1 min-w-sm"
                 cardType="warning"
             >
@@ -366,7 +365,6 @@
             </card>
             <card
                 title="Styles Cards: Danger"
-                subtitle="Not styled yet"
                 cardClass="flex-1 min-w-sm"
                 cardType="danger"
             >
@@ -387,7 +385,6 @@
         <section class="flex flex-row gap-8 flex-wrap">
             <card
                 title="Styles Cards: Dark"
-                subtitle="Not styled yet"
                 cardClass="flex-1 min-w-sm"
                 cardType="dark"
             >
@@ -406,7 +403,6 @@
             </card>
             <card
                 title="Styles Cards: Light"
-                subtitle="Not styled yet"
                 cardClass="flex-1 min-w-sm"
                 cardType="light"
             >
@@ -468,9 +464,3 @@ export default defineComponent({
     },
 });
 </script>
-
-<style scoped lang="pcss">
-ul {
-    @apply list-disc list-inside;
-}
-</style>
