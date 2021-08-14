@@ -24,7 +24,7 @@
                     </code-highlight>
                 </div>
             </card>
-            <card title="Props" :closable="true">
+            <card title="Props">
                 <p>
                     Here are the list of acceptable props for
                     <code>Card</code> component:
@@ -87,6 +87,16 @@
                                 <td class="max-w-xs">
                                     This will add close button to the card, so
                                     user can close the card if needed.
+                                </td>
+                            </tr>
+                            <tr>
+                                <td><code>isClosed</code></td>
+                                <td><code>boolean</code></td>
+                                <td><code>false</code></td>
+                                <td><code>false</code></td>
+                                <td class="max-w-xs">
+                                    This allows dynamic default status, like
+                                    v-if.
                                 </td>
                             </tr>
                         </tbody>

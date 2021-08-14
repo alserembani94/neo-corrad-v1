@@ -11,91 +11,89 @@
             transition-all
             duration-300
         "
-        :class="[cardType, cardClass]"
-        v-show="!state.isClosed"
+        :class="[props.cardType, props.cardClass]"
+        v-if="!state.isClosed"
     >
         <div class="flex flex-row justify-between items-start">
             <div class="flex flex-col">
-                <h3 v-if="title">{{ title }}</h3>
-                <p class="text-light-700" :class="[cardType]" v-if="subtitle">
-                    {{ subtitle }}
+                <h3 v-if="title">{{ props.title }}</h3>
+                <p
+                    class="text-light-700"
+                    :class="[props.cardType]"
+                    v-if="props.subtitle"
+                >
+                    {{ props.subtitle }}
                 </p>
             </div>
             <button
                 class="p-1"
-                :class="[{ hidden: !closable }]"
+                :class="[{ hidden: !props.closable }]"
                 @click="closeCard"
             >
                 <font-awesome-icon :icon="icon.faTimes" transform="grow-5" />
             </button>
         </div>
-        <hr class="text-light-500" :class="[cardType]" />
+        <hr class="text-light-500" :class="[props.cardType]" />
         <div class="flex flex-col gap-4">
             <slot />
         </div>
     </div>
 </template>
 
-<script lang="ts">
-import { defineComponent, reactive, computed } from "vue";
+<script setup lang="ts">
+import { defineProps, reactive, computed } from "vue";
 import { faTimes } from "@fortawesome/free-solid-svg-icons";
 import { FontAwesomeIcon } from "@fortawesome/vue-fontawesome";
 
-export default defineComponent({
-    name: "Card",
-    props: {
-        title: {
-            type: String,
-            required: true,
-        },
-        subtitle: {
-            type: String,
-        },
-        cardType: {
-            type: String,
-            default: "default",
-            validator(value: string) {
-                return [
-                    "default",
-                    "primary",
-                    "secondary",
-                    "info",
-                    "success",
-                    "warning",
-                    "danger",
-                    "dark",
-                    "light",
-                ].includes(value);
-            },
-        },
-        cardClass: {
-            type: String,
-        },
-        closable: {
-            type: Boolean,
-            default: false,
+const props = defineProps({
+    title: {
+        type: String,
+        required: true,
+    },
+    subtitle: {
+        type: String,
+    },
+    cardType: {
+        type: String,
+        default: "default",
+        validator(value: string) {
+            return [
+                "default",
+                "primary",
+                "secondary",
+                "info",
+                "success",
+                "warning",
+                "danger",
+                "dark",
+                "light",
+            ].includes(value);
         },
     },
-    components: {
-        FontAwesomeIcon,
+    cardClass: {
+        type: String,
     },
-    setup() {
-        const state = reactive({
-            isClosed: false,
-        });
-        const closeCard = () => {
-            state.isClosed = true;
-        };
-        const icon = computed(() => ({
-            faTimes,
-        }));
-        return {
-            icon,
-            state,
-            closeCard,
-        };
+    closable: {
+        type: Boolean,
+        default: false,
+    },
+    isClosed: {
+        type: Boolean,
+        default: false,
     },
 });
+
+const state = reactive({
+    isClosed: props.isClosed,
+});
+
+const closeCard = () => {
+    state.isClosed = true;
+};
+
+const icon = computed(() => ({
+    faTimes,
+}));
 </script>
 
 <style scoped lang="pcss">
