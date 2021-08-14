@@ -4,73 +4,73 @@ code {
 }
 
 /* For font sizes, can refer here: https://tailwindcss.com/docs/font-size */
-p, ul, ol {
+body p, ul, ol {
     @apply leading-7;
 }
-h1 {
+body h1 {
     @apply text-4xl;
 }
 
-h2 {
+body h2 {
     @apply text-3xl;
 }
 
-h3 {
+body h3 {
     @apply text-2xl;
 }
 
-h4 {
+body h4 {
     @apply text-xl;
 }
 
-h5 {
+body h5 {
     @apply text-lg;
 }
 
-p,
-h1,
-h2,
-h3,
-h4,
-h5,
-h6,
-li,
-input,
-button,
-a {
+body p,
+body h1,
+body h2,
+body h3,
+body h4,
+body h5,
+body h6,
+body li,
+body input,
+body button,
+body a {
     @apply font-sans antialiased;
 }
 
-h1,
-h2,
-h3,
-h4,
-h5,
-h6 {
+body h1,
+body h2,
+body h3,
+body h4,
+body h5,
+body h6 {
     @apply font-semibold;
 }
 
-br {
+body br {
     @apply mb-6;
 }
 
-ol,
-ul {
+body ol,
+body ul {
     @apply list-inside;
 }
 
-ul {
+body ul {
     @apply list-disc;
 }
 
-a {
+body a {
     @apply text-primary-500 underline hover:text-primary-400 visited:text-primary-600;
 }
 
-br {
+body br {
     @apply mb-6;
 }
 
-a {
+body a {
     @apply text-primary-500 underline hover:text-primary-400 visited:text-primary-600;
 }
