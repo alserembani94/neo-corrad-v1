@@ -33,22 +33,3 @@ export default defineComponent({
     },
 });
 </script>
-
-<!-- Add "scoped" attribute to limit CSS to this component only -->
-<!--<style scoped lang="scss">
-.main {
-    &-screen {
-        flex: 1;
-        display: flex;
-        flex-flow: column nowrap;
-    }
-
-    &-content {
-        padding: 3ch;
-        flex: 1;
-        display: flex;
-        flex-flow: column nowrap;
-        row-gap: 3ch;
-    }
-}
-</style> -->

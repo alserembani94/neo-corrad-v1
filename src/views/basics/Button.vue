@@ -550,7 +550,7 @@ const codeSample = {
 };
 
 export default defineComponent({
-    name: "About",
+    name: "ButtonPage",
     components: {
         CodeHighlight,
         Layout,

@@ -451,7 +451,7 @@ export default defineComponent({
 };
 
 export default defineComponent({
-    name: "CardComp",
+    name: "CardPage",
     components: {
         Layout,
         Card,

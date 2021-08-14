@@ -211,7 +211,7 @@ import Layout from "@/components/layouts/Default.vue";
 import Card from "@/components/containers/Card.vue";
 
 export default defineComponent({
-    name: "Text",
+    name: "TextPage",
     components: {
         Layout,
         Card,
