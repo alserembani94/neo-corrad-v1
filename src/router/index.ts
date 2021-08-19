@@ -30,6 +30,11 @@ const routes: Array<RouteRecordRaw> = [
         name: "Buttons",
         component: () => import("../views/basics/Button.vue"),
     },
+    {
+        path: "/forms/input",
+        name: "Input",
+        component: () => import("../views/forms/Input.vue"),
+    },
 
     {
         path: "/containers/card",

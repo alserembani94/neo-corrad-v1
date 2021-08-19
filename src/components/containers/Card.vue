@@ -96,7 +96,7 @@ const icon = computed(() => ({
 }));
 </script>
 
-<style scoped lang="pcss">
+<style scoped lang="postcss">
 .primary {
     @apply bg-primary-300 text-white;
 }

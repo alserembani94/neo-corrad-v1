@@ -116,9 +116,13 @@ module.exports = {
             },
             minWidth: {
                 mobile: "300px",
+                input: "22ch",
             },
             minHeight: {
                 80: "20rem",
+            },
+            maxWidth: {
+                "input-label": "15ch",
             },
             maxHeight: {
                 "2/3": "66.7%",
