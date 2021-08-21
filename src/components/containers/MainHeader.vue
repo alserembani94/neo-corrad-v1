@@ -11,7 +11,7 @@
             py-2
             sticky
             top-0
-            z-100
+            z-50
         "
     >
         <div class="flex flex-row gap-6">

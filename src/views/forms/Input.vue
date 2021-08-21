@@ -106,6 +106,7 @@
                     id="test-input-2"
                     label-position="float"
                     label="Mother's email"
+                    :required="true"
                     placeholder="Can I be placeholder?"
                     type="email"
                 />
@@ -115,6 +116,31 @@
                     label="Father's email"
                     default-value="abc@gmail.com"
                     type="email"
+                />
+            </card>
+            <card title="Sample: Prefixes and Postfixes">
+                <c-input
+                    id="test-input-1"
+                    label-position="float"
+                    label="Price (with prefix)"
+                    type="number"
+                    prefix="MYR"
+                    minlength="10"
+                />
+                <c-input
+                    id="test-input-1"
+                    label-position="float"
+                    label="Email (with postfix)"
+                    postfix="@corrad.com"
+                    minlength="5"
+                />
+                <c-input
+                    id="test-input-1"
+                    label-position="float"
+                    label="Email (with prefix &amp; postfix)"
+                    prefix="user."
+                    postfix="@corrad.com"
+                    minlength="5"
                 />
             </card>
         </section>
