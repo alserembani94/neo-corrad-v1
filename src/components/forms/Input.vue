@@ -23,6 +23,7 @@
                 :placeholder="
                     labelPosition === 'float' ? undefined : placeholder
                 "
+                :inputmode="inputHandler.inputMode"
                 @focus="handleFocus"
                 @blur="handleBlur"
                 v-bind="$attrs"
@@ -93,6 +94,12 @@ const inputHandler = reactive({
     inputMessage: "",
     isError: false,
     isFocused: false,
+    inputMode:
+        props.type === "number"
+            ? "numeric"
+            : props.type === "email"
+            ? "email"
+            : "text",
 });
 
 const handleFocus = () => {

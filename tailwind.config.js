@@ -116,7 +116,7 @@ module.exports = {
             },
             minWidth: {
                 mobile: "300px",
-                input: "22ch",
+                input: "8ch",
             },
             minHeight: {
                 80: "20rem",

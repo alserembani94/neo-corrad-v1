@@ -124,6 +124,7 @@
                     label-position="float"
                     label="Price (with prefix)"
                     type="number"
+                    min="1"
                     prefix="MYR"
                     minlength="10"
                 />
