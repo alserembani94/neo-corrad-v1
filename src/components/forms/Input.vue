@@ -7,7 +7,10 @@
             <div
                 class="prefix"
                 v-if="!!prefix"
-                :class="{ error: inputHandler.isError }"
+                :class="{
+                    error: inputHandler.isError,
+                    focus: inputHandler.isFocused,
+                }"
             >
                 <p>{{ prefix }}</p>
             </div>
@@ -24,6 +27,7 @@
                     labelPosition === 'float' ? undefined : placeholder
                 "
                 :inputmode="inputHandler.inputMode"
+                @input="handleChange"
                 @focus="handleFocus"
                 @blur="handleBlur"
                 v-bind="$attrs"
@@ -32,7 +36,10 @@
             <div
                 class="postfix"
                 v-if="!!postfix"
-                :class="{ error: inputHandler.isError }"
+                :class="{
+                    error: inputHandler.isError,
+                    focus: inputHandler.isFocused,
+                }"
             >
                 <p>{{ postfix }}</p>
             </div>
@@ -89,11 +96,21 @@ const props = defineProps({
     },
 });
 
-const inputHandler = reactive({
+type InputHandler = {
+    inputElement: string | number;
+    inputMessage: string;
+    isError: boolean;
+    isFocused: boolean;
+    prevInput?: string;
+    inputMode: string;
+};
+
+const inputHandler = reactive<InputHandler>({
     inputElement: props.defaultValue || "",
     inputMessage: "",
     isError: false,
     isFocused: false,
+    prevInput: undefined,
     inputMode:
         props.type === "number"
             ? "numeric"
@@ -103,13 +120,20 @@ const inputHandler = reactive({
 });
 
 const handleFocus = () => {
-    inputHandler.isError = false;
     inputHandler.isFocused = true;
+};
+
+const handleChange = ({ target }: { target: HTMLInputElement }) => {
+    if (target.value !== inputHandler.prevInput) {
+        inputHandler.isError = false;
+        inputHandler.prevInput = undefined;
+    }
 };
 
 const handleBlur = ({ target }: { target: HTMLInputElement }) => {
     inputHandler.isFocused = false;
     const validityState: ValidityState = target.validity;
+    inputHandler.prevInput = target.value;
 
     if (!validityState.valid) {
         inputHandler.isError = true;
@@ -126,11 +150,12 @@ const handleBlur = ({ target }: { target: HTMLInputElement }) => {
 
 <style scoped lang="postcss">
 input {
-    @apply border rounded-md border-dark-100 py-2 px-4 flex-1 w-full min-w-input outline-none transition-all duration-300 ease-in-out;
-    @apply focus:border-dark-600;
+    @apply border rounded-md border-light-500 py-2 px-4 flex-1 w-full min-w-input outline-none transition-all duration-300 ease-in-out;
+    @apply hover:border-light-600 focus:border-primary-300 focus:shadow-focus;
+    /* @apply hover:border-light-600 focus:border-primary-300 focus:ring-primary-300 focus:ring-1; */
 
     &.error {
-        @apply border-danger-500;
+        @apply border-danger-500 focus:shadow-danger;
     }
 
     &.inputPrefix {
@@ -143,18 +168,24 @@ input {
 }
 
 .prefix {
-    @apply py-2 px-6 rounded-l-md bg-light-600 transition-colors duration-500 ease-in-out;
+    @apply py-2 px-6 rounded-l-md bg-light-500 transition-colors duration-500 ease-in-out;
 
     &.error {
         @apply bg-danger-500 text-white;
+        &.focus {
+            @apply shadow-danger;
+        }
     }
 }
 
 .postfix {
-    @apply py-2 px-6 rounded-r-md bg-light-600 transition-colors duration-500 ease-in-out;
+    @apply py-2 px-6 rounded-r-md bg-light-500 transition-colors duration-500 ease-in-out;
 
     &.error {
         @apply bg-danger-500 text-white;
+        &.focus {
+            @apply shadow-danger;
+        }
     }
 }
 

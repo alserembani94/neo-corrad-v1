@@ -127,6 +127,10 @@ module.exports = {
             maxHeight: {
                 "2/3": "66.7%",
             },
+            boxShadow: {
+                danger: "0 0 4px var(--danger-500)",
+                focus: "0 0 4px var(--primary-300)",
+            },
         },
     },
     variants: {

@@ -447,15 +447,9 @@ const codeSample = {
     </card>
 </template>
 
-<script lang="ts">
+<script setup lang="ts">
 import { defineComponent } from "vue";
 import Card from "@/components/containers/Card.vue";
-
-export default defineComponent({
-    components: {
-        Card,
-    },
-});
 <script>`,
 };
 </script>
