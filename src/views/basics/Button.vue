@@ -1,11 +1,11 @@
 <template>
-    <layout>
+    <Layout>
         <section class="flex flex-col gap-2">
             <h1>Buttons</h1>
         </section>
         <!-- <button class="btn-base ring-2 ring-primary-500 text-primary-500 hover:bg-primary-500 hover:text-white">Hello</button> -->
         <section class="flex flex-col gap-8">
-            <card title="Introduction">
+            <Card title="Introduction">
                 <p>
                     There are several button styles provided out of the box for
                     you. To use it, you can simply call
@@ -20,8 +20,8 @@
                         {{ codeSample.importCard }}
                     </code-highlight>
                 </p>
-            </card>
-            <card title="Styles">
+            </Card>
+            <Card title="Styles">
                 <h4>🌟 Button Styles</h4>
                 <p>You can choose from one of these styles provided:</p>
                 <div class="overflow-x-auto">
@@ -528,9 +528,9 @@
                         </tbody>
                     </table>
                 </div>
-            </card>
+            </Card>
         </section>
-    </layout>
+    </Layout>
 </template>
 
 <script setup lang="ts">

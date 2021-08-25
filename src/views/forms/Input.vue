@@ -1,10 +1,10 @@
 <template>
-    <layout>
+    <Layout>
         <section class="flex flex-col gap-2">
             <h1>Inputs</h1>
         </section>
         <section class="flex flex-col gap-8">
-            <card title="Introduction">
+            <Card title="Introduction">
                 <p>
                     Input is one of the crucial element in a web app. A more
                     intuitive input will ease user experience.
@@ -18,10 +18,11 @@
 
                 <p>
                     Note that <code>c-input</code> is used instead of native
-                    input for for microinteraction control.
+                    input for for microinteraction control. It is also advisable
+                    to use <code>input</code> inside <code>form</code> element.
                 </p>
-            </card>
-            <card title="Props">
+            </Card>
+            <Card title="Props">
                 <p>
                     Here are the list of acceptable props for
                     <code>CInput</code> component:
@@ -128,100 +129,96 @@
                         </tbody>
                     </table>
                 </div>
-            </card>
-            <card title="Sample: Side Label">
-                <c-input id="test-input-1" label-position="side" label="Name" />
-                <c-input
+            </Card>
+            <Card title="Sample: Side Label">
+                <CInput id="test-input-1" label-position="side" label="Name" />
+                <CInput
                     id="test-input-2"
                     label-position="side"
                     label="Mother's name"
                     placeholder="Can I be placeholder?"
                 />
-                <c-input
+                <CInput
                     id="test-input-3"
                     label-position="side"
                     label="Father's name"
                     default-value="This is default value"
                 />
-            </card>
-            <card title="Sample: Top Label">
-                <c-input id="test-input-1" label-position="top" label="Name" />
-                <c-input
+            </Card>
+            <Card title="Sample: Top Label">
+                <CInput id="test-input-1" label-position="top" label="Name" />
+                <CInput
                     id="test-input-2"
                     label-position="top"
                     label="Mother's name"
                     placeholder="Can I be placeholder?"
                 />
-                <c-input
+                <CInput
                     id="test-input-3"
                     label-position="top"
                     label="Father's name"
                     default-value="This is default value"
                 />
-            </card>
-            <card title="Sample: Float Label">
-                <c-input
-                    id="test-input-1"
-                    label-position="float"
-                    label="Name"
-                />
-                <c-input
+            </Card>
+            <Card title="Sample: Float Label">
+                <CInput id="test-input-1" label-position="float" label="Name" />
+                <CInput
                     id="test-input-2"
                     label-position="float"
                     label="Mother's name"
                     placeholder="Can I be placeholder?"
                 />
-                <c-input
+                <CInput
                     id="test-input-3"
                     label-position="float"
                     label="Father's name"
                     default-value="This is default value, try delete this input to make it submerge again!"
                 />
-            </card>
-            <card title="Sample: Float Label (with grid)">
+            </Card>
+            <Card title="Sample: Float Label (with grid)">
                 <div class="grid grid-cols-2 gap-x-16 gap-y-4">
-                    <c-input
+                    <CInput
                         id="test-input-1"
                         label-position="float"
                         label="Name"
                     />
-                    <c-input
+                    <CInput
                         id="test-input-2"
                         label-position="float"
                         label="Mother's name"
                         placeholder="Can I be placeholder?"
                     />
-                    <c-input
+                    <CInput
                         id="test-input-3"
                         label-position="float"
                         label="Father's name"
                         default-value="This is default value."
                     />
-                    <c-input
+                    <CInput
                         id="test-input-3"
                         label-position="float"
                         label="Father's name"
                         default-value="This is default value."
                     />
                 </div>
-            </card>
-            <card
+            </Card>
+            <Card
                 title="Sample: Error simulator"
                 subtitle="These inputs should be email, try to input an invalid email format"
             >
-                <c-input
+                <CInput
                     id="test-input-1"
                     label-position="float"
                     label="Email"
                     type="email"
                 />
-                <c-input
+                <CInput
                     id="test-input-1"
                     label-position="float"
                     label="Email"
                     type="email"
                 />
-                <c-input
+                <CInput
                     id="test-input-2"
                     label-position="float"
                     label="Mother's email"
@@ -229,16 +226,16 @@
                     placeholder="Can I be placeholder?"
                     type="email"
                 />
-                <c-input
+                <CInput
                     id="test-input-3"
                     label-position="float"
                     label="Father's email"
                     default-value="abc@gmail.com"
                     type="email"
                 />
-            </card>
-            <card title="Sample: Prefixes and Postfixes">
-                <c-input
+            </Card>
+            <Card title="Sample: Prefixes and Postfixes">
+                <CInput
                     id="test-input-1"
                     label-position="float"
                     label="Price (with prefix)"
@@ -247,14 +244,14 @@
                     prefix="MYR"
                     minlength="10"
                 />
-                <c-input
+                <CInput
                     id="test-input-1"
                     label-position="float"
                     label="Email (with postfix)"
                     postfix="@corrad.com"
                     minlength="5"
                 />
-                <c-input
+                <CInput
                     id="test-input-1"
                     label-position="float"
                     label="Email (with prefix &amp; postfix)"
@@ -262,9 +259,9 @@
                     postfix="@corrad.com"
                     minlength="5"
                 />
-            </card>
+            </Card>
         </section>
-    </layout>
+    </Layout>
 </template>
 
 <script setup lang="ts">
@@ -279,7 +276,7 @@ import { FontAwesomeIcon } from "@fortawesome/vue-fontawesome";
 
 const codeSample = {
     importInput: `<template>
-    <c-input
+    <CInput
         id="test-input-1"
         label-position="float"
         label="Name"
@@ -287,7 +284,6 @@ const codeSample = {
 </template>
 
 <script setup lang="ts">
-import { defineComponent } from "vue";
 import CInput from "@/components/forms/Input.vue";
 <script>`,
 };

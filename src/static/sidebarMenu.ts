@@ -63,6 +63,11 @@ export const sidebarMenu: MenuList = [
                 label: "Card",
                 path: "/containers/card",
             },
+            {
+                id: "menu-table",
+                label: "Table",
+                path: "/containers/table",
+            },
         ],
     },
     {
@@ -83,39 +88,39 @@ export const sidebarMenu: MenuList = [
         icon: "faPaintBrush",
         path: "/themes",
     },
-    {
-        id: "menu-account",
-        label: "1st Lvl Nav",
-        icon: "faUser",
-        subMenu: [
-            {
-                id: "menu-profile",
-                label: "2nd Lvl Nav 1",
-                path: "/test1",
-            },
-            {
-                id: "menu-appearance",
-                label: "2nd Lvl Nav 2",
-                path: "/test2",
-            },
-            {
-                id: "menu-domain",
-                label: "2nd Lvl Nav 3",
-                subMenu: [
-                    {
-                        id: "menu-domain-manage",
-                        label: "3nd Lvl Nav 1",
-                        path: "/test3",
-                    },
-                    {
-                        id: "menu-domain-add",
-                        label: "3nd Lvl Nav 2",
-                        path: "/test4",
-                    },
-                ],
-            },
-        ],
-    },
+    // {
+    //     id: "menu-account",
+    //     label: "1st Lvl Nav",
+    //     icon: "faUser",
+    //     subMenu: [
+    //         {
+    //             id: "menu-profile",
+    //             label: "2nd Lvl Nav 1",
+    //             path: "/test1",
+    //         },
+    //         {
+    //             id: "menu-appearance",
+    //             label: "2nd Lvl Nav 2",
+    //             path: "/test2",
+    //         },
+    //         {
+    //             id: "menu-domain",
+    //             label: "2nd Lvl Nav 3",
+    //             subMenu: [
+    //                 {
+    //                     id: "menu-domain-manage",
+    //                     label: "3nd Lvl Nav 1",
+    //                     path: "/test3",
+    //                 },
+    //                 {
+    //                     id: "menu-domain-add",
+    //                     label: "3nd Lvl Nav 2",
+    //                     path: "/test4",
+    //                 },
+    //             ],
+    //         },
+    //     ],
+    // },
     {
         id: "menu-about",
         label: "About",

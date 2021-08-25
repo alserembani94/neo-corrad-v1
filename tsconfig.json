@@ -19,7 +19,9 @@
       "expect-webdriverio",
       "webdriverio/sync",
       "mocha",
-      "chai"
+      "chai",
+
+      "types.d.ts"
     ],
     "paths": {
       "@/*": [
@@ -39,7 +41,7 @@
     "src/**/*.vue",
     "tests/**/*.ts",
     "tests/**/*.tsx"
-  ],
+, "types.d.ts"  ],
   "exclude": [
     "node_modules"
   ]

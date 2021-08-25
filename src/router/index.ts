@@ -41,6 +41,11 @@ const routes: Array<RouteRecordRaw> = [
         name: "Card",
         component: () => import("../views/containers/Card.vue"),
     },
+    {
+        path: "/containers/table",
+        name: "Table",
+        component: () => import("../views/containers/Table.vue"),
+    },
 
     {
         path: "/layouts/default",

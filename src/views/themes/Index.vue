@@ -1,10 +1,10 @@
 <template>
-    <layout>
+    <Layout>
         <section class="flex flex-col gap-2">
             <h1>Themes</h1>
         </section>
         <section class="flex flex-col gap-8">
-            <card title="Introduction">
+            <Card title="Introduction">
                 <p>
                     We are proudly using Tailwind, a utility-first CSS framework
                     packed with classes that can be composed to build any
@@ -24,11 +24,11 @@
                     by modifying <code>src/index.css</code>, or just modify
                     <code>tainwind.config.js</code> directly.
                 </p>
-            </card>
+            </Card>
         </section>
 
         <section class="grid grid-cols-1 gap-8">
-            <card title="Colors">
+            <Card title="Colors">
                 <p>
                     We are extending existing Tailwind Colors profile,
                     handpicked just for you.
@@ -1010,9 +1010,9 @@
                         <p class="text-sm mt-2"><code>baseBg</code></p>
                     </div>
                 </div>
-            </card>
+            </Card>
         </section>
-    </layout>
+    </Layout>
 </template>
 
 <script setup lang="ts">

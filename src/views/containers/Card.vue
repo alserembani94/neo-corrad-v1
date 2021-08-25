@@ -1,10 +1,10 @@
 <template>
-    <layout>
+    <Layout>
         <section class="flex flex-col gap-2">
             <h1>Cards</h1>
         </section>
         <section class="flex flex-col gap-8">
-            <card title="Introduction">
+            <Card title="Introduction">
                 <p>
                     The current container that you see is
                     <code>Card</code> component.
@@ -23,8 +23,8 @@
                         {{ codeSample.importCard }}
                     </code-highlight>
                 </div>
-            </card>
-            <card title="Props">
+            </Card>
+            <Card title="Props">
                 <p>
                     Here are the list of acceptable props for
                     <code>Card</code> component:
@@ -102,19 +102,19 @@
                         </tbody>
                     </table>
                 </div>
-            </card>
+            </Card>
         </section>
         <section class="flex flex-col gap-2">
             <h2>Samples</h2>
         </section>
         <section class="flex flex-row gap-8">
-            <card title="Card with Titles" cardClass="flex-1 min-w-sm">
+            <Card title="Card with Titles" cardClass="flex-1 min-w-sm">
                 <p>
                     You can put anything inside card, wrapped with
                     <code>Card</code> component!
                 </p>
-            </card>
-            <card
+            </Card>
+            <Card
                 title="Card with Titles"
                 subtitle="...and also subtitles to explain it!"
                 cardClass="flex-1 min-w-sm"
@@ -123,10 +123,10 @@
                     You can put anything inside card, wrapped with
                     <code>Card</code> component!
                 </p>
-            </card>
+            </Card>
         </section>
         <section class="flex flex-row gap-8">
-            <card title="Card with Titles" cardClass="flex-1 min-w-sm">
+            <Card title="Card with Titles" cardClass="flex-1 min-w-sm">
                 <p>
                     Lorem ipsum dolor sit amet, consectetuer adipiscing elit,
                     sed diam nonummy nibh euismod tincidunt ut laoreet dolore
@@ -139,10 +139,10 @@
                     praesent luptatum zzril delenit augue duis dolore te feugait
                     nulla facilisi.
                 </p>
-            </card>
+            </Card>
         </section>
         <section class="flex flex-row gap-8 flex-wrap">
-            <card
+            <Card
                 title="Card with Titles"
                 subtitle="...that is closable!"
                 cardClass="flex-1 min-w-sm"
@@ -160,8 +160,8 @@
                     praesent luptatum zzril delenit augue duis dolore te feugait
                     nulla facilisi.
                 </p>
-            </card>
-            <card title="Card with Titles" cardClass="flex-1 min-w-sm">
+            </Card>
+            <Card title="Card with Titles" cardClass="flex-1 min-w-sm">
                 <p>
                     Lorem ipsum dolor sit amet, consectetuer adipiscing elit,
                     sed diam nonummy nibh euismod tincidunt ut laoreet dolore
@@ -174,8 +174,8 @@
                     praesent luptatum zzril delenit augue duis dolore te feugait
                     nulla facilisi.
                 </p>
-            </card>
-            <card title="Card with Titles" cardClass="flex-1 min-w-sm">
+            </Card>
+            <Card title="Card with Titles" cardClass="flex-1 min-w-sm">
                 <p>
                     Lorem ipsum dolor sit amet, consectetuer adipiscing elit,
                     sed diam nonummy nibh euismod tincidunt ut laoreet dolore
@@ -188,10 +188,10 @@
                     praesent luptatum zzril delenit augue duis dolore te feugait
                     nulla facilisi.
                 </p>
-            </card>
+            </Card>
         </section>
         <section class="grid grid-cols-3 gap-8">
-            <card
+            <Card
                 title="Card with Grid"
                 subtitle="...that is closable!"
                 cardClass="col-span-2 auto-cols-max"
@@ -209,8 +209,8 @@
                     praesent luptatum zzril delenit augue duis dolore te feugait
                     nulla facilisi.
                 </p>
-            </card>
-            <card
+            </Card>
+            <Card
                 title="Card with Grid"
                 subtitle="...with line-clamp!"
                 cardClass=""
@@ -227,10 +227,10 @@
                     praesent luptatum zzril delenit augue duis dolore te feugait
                     nulla facilisi.
                 </p>
-            </card>
+            </Card>
         </section>
         <section class="grid grid-cols-4 gap-8">
-            <card title="Card with Grid" cardClass="">
+            <Card title="Card with Grid" cardClass="">
                 <p>
                     Lorem ipsum dolor sit amet, consectetuer adipiscing elit,
                     sed diam nonummy nibh euismod tincidunt ut laoreet dolore
@@ -243,8 +243,8 @@
                     praesent luptatum zzril delenit augue duis dolore te feugait
                     nulla facilisi.
                 </p>
-            </card>
-            <card
+            </Card>
+            <Card
                 title="Card with Grid"
                 subtitle="...that is closable!"
                 cardClass="col-span-2"
@@ -262,8 +262,8 @@
                     praesent luptatum zzril delenit augue duis dolore te feugait
                     nulla facilisi.
                 </p>
-            </card>
-            <card title="Card with Grid">
+            </Card>
+            <Card title="Card with Grid">
                 <p>
                     Lorem ipsum dolor sit amet, consectetuer adipiscing elit,
                     sed diam nonummy nibh euismod tincidunt ut laoreet dolore
@@ -276,10 +276,10 @@
                     praesent luptatum zzril delenit augue duis dolore te feugait
                     nulla facilisi.
                 </p>
-            </card>
+            </Card>
         </section>
         <section class="flex flex-row gap-8 flex-wrap">
-            <card
+            <Card
                 title="Styles Cards: Primary"
                 cardClass="flex-1 min-w-sm"
                 cardType="primary"
@@ -296,8 +296,8 @@
                     praesent luptatum zzril delenit augue duis dolore te feugait
                     nulla facilisi.
                 </p>
-            </card>
-            <card
+            </Card>
+            <Card
                 title="Styles Cards: Secondary"
                 cardClass="flex-1 min-w-sm"
                 cardType="secondary"
@@ -314,10 +314,10 @@
                     praesent luptatum zzril delenit augue duis dolore te feugait
                     nulla facilisi.
                 </p>
-            </card>
+            </Card>
         </section>
         <section class="flex flex-row gap-8 flex-wrap">
-            <card
+            <Card
                 title="Styles Cards: Info"
                 cardClass="flex-1 min-w-sm"
                 cardType="info"
@@ -334,8 +334,8 @@
                     praesent luptatum zzril delenit augue duis dolore te feugait
                     nulla facilisi.
                 </p>
-            </card>
-            <card
+            </Card>
+            <Card
                 title="Styles Cards: Success"
                 cardClass="flex-1 min-w-sm"
                 cardType="success"
@@ -352,10 +352,10 @@
                     praesent luptatum zzril delenit augue duis dolore te feugait
                     nulla facilisi.
                 </p>
-            </card>
+            </Card>
         </section>
         <section class="flex flex-row gap-8 flex-wrap">
-            <card
+            <Card
                 title="Styles Cards: Warning"
                 cardClass="flex-1 min-w-sm"
                 cardType="warning"
@@ -372,8 +372,8 @@
                     praesent luptatum zzril delenit augue duis dolore te feugait
                     nulla facilisi.
                 </p>
-            </card>
-            <card
+            </Card>
+            <Card
                 title="Styles Cards: Danger"
                 cardClass="flex-1 min-w-sm"
                 cardType="danger"
@@ -390,10 +390,10 @@
                     praesent luptatum zzril delenit augue duis dolore te feugait
                     nulla facilisi.
                 </p>
-            </card>
+            </Card>
         </section>
         <section class="flex flex-row gap-8 flex-wrap">
-            <card
+            <Card
                 title="Styles Cards: Dark"
                 cardClass="flex-1 min-w-sm"
                 cardType="dark"
@@ -410,8 +410,8 @@
                     praesent luptatum zzril delenit augue duis dolore te feugait
                     nulla facilisi.
                 </p>
-            </card>
-            <card
+            </Card>
+            <Card
                 title="Styles Cards: Light"
                 cardClass="flex-1 min-w-sm"
                 cardType="light"
@@ -428,9 +428,9 @@
                     praesent luptatum zzril delenit augue duis dolore te feugait
                     nulla facilisi.
                 </p>
-            </card>
+            </Card>
         </section>
-    </layout>
+    </Layout>
 </template>
 
 <script setup lang="ts">
@@ -442,13 +442,12 @@ import "vue-code-highlight/themes/window.css";
 
 const codeSample = {
     importCard: `<template>
-    <card title="Introduction">
+    <Card title="Introduction">
         <!-- ...Your card content -->
-    </card>
+    </Card>
 </template>
 
 <script setup lang="ts">
-import { defineComponent } from "vue";
 import Card from "@/components/containers/Card.vue";
 <script>`,
 };

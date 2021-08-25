@@ -1,10 +1,10 @@
 <template>
-    <layout>
+    <Layout>
         <section class="flex flex-col gap-2">
             <h1>Texts</h1>
         </section>
         <section class="flex flex-col gap-8">
-            <card title="Introduction">
+            <Card title="Introduction">
                 <p>
                     There are several texts element in HTML that can be used
                     semantically, which are:
@@ -38,8 +38,8 @@
                         >all text fundamentals in MDN docs.</a
                     >
                 </p>
-            </card>
-            <card title="Styles">
+            </Card>
+            <Card title="Styles">
                 <p>
                     The root font is set to <code>16px</code>. To scale your
                     font proportionally, you can declare your root font size
@@ -169,8 +169,8 @@
                         </tbody>
                     </table>
                 </div>
-            </card>
-            <card title="Samples">
+            </Card>
+            <Card title="Samples">
                 <h1>Heading 1</h1>
                 <h2>Heading 2</h2>
                 <h3>Heading 3</h3>
@@ -200,9 +200,9 @@
                     praesent luptatum zzril delenit augue duis dolore te feugait
                     nulla facilisi.
                 </p>
-            </card>
+            </Card>
         </section>
-    </layout>
+    </Layout>
 </template>
 
 <script setup lang="ts">

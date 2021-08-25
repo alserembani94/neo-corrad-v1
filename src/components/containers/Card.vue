@@ -41,46 +41,32 @@
 </template>
 
 <script setup lang="ts">
-import { defineProps, reactive, computed } from "vue";
+import { defineProps, withDefaults, reactive, computed } from "vue";
 import { faTimes } from "@fortawesome/free-solid-svg-icons";
 import { FontAwesomeIcon } from "@fortawesome/vue-fontawesome";
 
-const props = defineProps({
-    title: {
-        type: String,
-        required: true,
-    },
-    subtitle: {
-        type: String,
-    },
-    cardType: {
-        type: String,
-        default: "default",
-        validator(value: string) {
-            return [
-                "default",
-                "primary",
-                "secondary",
-                "info",
-                "success",
-                "warning",
-                "danger",
-                "dark",
-                "light",
-            ].includes(value);
-        },
-    },
-    cardClass: {
-        type: String,
-    },
-    closable: {
-        type: Boolean,
-        default: false,
-    },
-    isClosed: {
-        type: Boolean,
-        default: false,
-    },
+type Props = {
+    title: string;
+    subtitle?: string;
+    cardType?:
+        | "default"
+        | "primary"
+        | "secondary"
+        | "info"
+        | "success"
+        | "warning"
+        | "danger"
+        | "dark"
+        | "light";
+    cardClass?: string;
+    closable?: boolean;
+    isClosed?: boolean;
+};
+
+const props = withDefaults(defineProps<Props>(), {
+    cardType: "default",
+    closable: false,
+    isClosed: false,
 });
 
 const state = reactive({

@@ -1,25 +1,25 @@
 <template>
-    <layout>
+    <Layout>
         <section class="flex flex-col gap-2">
             <h1>About Corrad Neo</h1>
         </section>
         <section class="flex flex-row flex-wrap gap-8">
-            <card title="Team" cardClass="flex-1 min-w-mobile">
+            <Card title="Team" cardClass="flex-1 min-w-mobile">
                 <p>
                     The team behind Corrad Neo is the most dedicated team in
                     history of ANSI. Malaysian-made, design specially brewed,
                     components catered in the minute details.
                 </p>
-            </card>
-            <card title="Contact Us" cardClass="flex-1 min-w-mobile">
+            </Card>
+            <Card title="Contact Us" cardClass="flex-1 min-w-mobile">
                 <p>
                     You can just reach us at bla bla bla. So we will wait there
                     until there is response.
                 </p>
-            </card>
+            </Card>
         </section>
         <section class="flex flex-row flex-wrap gap-8">
-            <card title="Corrad Stack" cardClass="flex-1">
+            <Card title="Corrad Stack" cardClass="flex-1">
                 <ul class="flex flex-row flex-wrap">
                     <li>
                         <font-awesome-layers full-width class="fa-3x">
@@ -33,10 +33,10 @@
                     </li>
                 </ul>
                 <p></p>
-            </card>
+            </Card>
         </section>
         <section class="flex flex-row flex-wrap gap-8">
-            <card
+            <Card
                 title="License"
                 cardClass="flex-1 min-w-mobile max-w-screen-lg"
             >
@@ -64,9 +64,9 @@
                     FROM, OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE
                     OR OTHER DEALINGS IN THE SOFTWARE.
                 </p>
-            </card>
+            </Card>
         </section>
-    </layout>
+    </Layout>
 </template>
 
 <script setup lang="ts">

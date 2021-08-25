@@ -1,5 +1,5 @@
 <template>
-    <layout>
+    <Layout>
         <section class="flex flex-col gap-2">
             <h1>Welcome to Corrad Neo</h1>
             <p class="text-light-700">
@@ -7,7 +7,7 @@
                 TailwindCSS and Vue!
             </p>
         </section>
-        <card title="Customisation" cardClass="max-w-screen-lg">
+        <Card title="Customisation" cardClass="max-w-screen-lg">
             <p>
                 You can explore all components available out of the box for you
                 to customise your admin dashboard! Choose what matters to you,
@@ -31,8 +31,8 @@
                 and post issues. Or, you can just do pull request, and our team
                 will review your suggestions!
             </p>
-        </card>
-    </layout>
+        </Card>
+    </Layout>
 </template>
 
 <script setup lang="ts">
