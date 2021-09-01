@@ -23,7 +23,7 @@
                 <ul class="flex flex-row flex-wrap">
                     <li>
                         <font-awesome-layers full-width class="fa-3x">
-                            <font-awesome-icon :icon="icons.faVuejs" />
+                            <FontAwesomeIcon :icon="icons.faVuejs" />
                             <font-awesome-layers-text
                                 class="w-full"
                                 transform="down-14 shrink-12"

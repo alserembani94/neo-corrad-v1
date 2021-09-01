@@ -68,10 +68,10 @@ button:disabled {
 }
 
 .btn-light {
-    @apply bg-light-500 hover:bg-light-400 hover:ring-1 hover:ring-light-600 active:bg-light-600 disabled:bg-light-300 focus:ring-light-600 focus:ring-2 focus:bg-light-400;
+    @apply bg-light-300 hover:bg-light-400 hover:ring-1 hover:ring-light-600 active:bg-light-600 disabled:bg-light-300 focus:ring-light-600 focus:ring-2 focus:bg-light-400;
 }
 .btn-light[data-active=true] {
-    @apply bg-light-600;
+    @apply bg-light-500;
 }
 
 .btn-primary,

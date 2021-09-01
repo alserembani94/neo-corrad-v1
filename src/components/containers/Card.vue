@@ -30,10 +30,10 @@
                 :class="[{ hidden: !props.closable }]"
                 @click="closeCard"
             >
-                <font-awesome-icon :icon="icon.faTimes" transform="grow-5" />
+                <FontAwesomeIcon :icon="icon.faTimes" transform="grow-5" />
             </button>
         </div>
-        <hr class="text-light-500" :class="[props.cardType]" />
+        <hr class="text-light-500" :class="[props.cardType]" v-if="title" />
         <div class="flex flex-col gap-4">
             <slot />
         </div>
@@ -46,7 +46,7 @@ import { faTimes } from "@fortawesome/free-solid-svg-icons";
 import { FontAwesomeIcon } from "@fortawesome/vue-fontawesome";
 
 type Props = {
-    title: string;
+    title?: string;
     subtitle?: string;
     cardType?:
         | "default"

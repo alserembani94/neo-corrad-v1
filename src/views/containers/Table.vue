@@ -1,22 +1,13 @@
 <template>
     <Layout>
         <section class="flex flex-col gap-2">
-            <h1>Tables</h1>
+            <h1>Table Data</h1>
         </section>
         <section class="flex flex-col gap-8">
             <Card title="Introduction">
                 <p>
-                    The current container that you see is
-                    <code>Card</code> component.
-
-                    <br />
-
-                    To use the component, simply import
-                    <code>Card</code> component, and use it inside your code.
-                    The specs for <code>Card</code> are standard, which can be
-                    referred with the TailwindCSS classes - <code>py-6</code>,
-                    <code>px-8</code>, <code>shadow-md</code> and
-                    <code>rounded-md</code>
+                    Table data is table with paginations, filters, sorts options
+                    available out of the box!
                 </p>
                 <!-- <div class="max-w-3xl">
                     <code-highlight languange="typescript">
@@ -24,12 +15,30 @@
                     </code-highlight>
                 </div> -->
             </Card>
-            <Card title="Introduction">
-                <CTableData
+            <Card title="Sample Data">
+                <AltTable
                     :columns="tableConfig.columns"
-                    :entries="tableConfig.entries"
-                    :pagination="tableConfig.pagination"
-                />
+                    :entries="dataState.entries"
+                    :pagination="pagination"
+                    :total-rows="totalRows"
+                    @paginate="handlePagination"
+                    @filter="handleFilter"
+                    @sort="handleSort"
+                    @entry-resize="handleResize"
+                >
+                    <template #row_id="{ entry }">
+                        {{ entry.id }}
+                    </template>
+                    <template #row_name="{ entry }">
+                        {{ entry.name }}
+                    </template>
+                    <template #row_age="{ entry }">
+                        {{ entry.age }}
+                    </template>
+                    <template #row_action="">
+                        <button class="btn-primary btn-sm">Submit</button>
+                    </template>
+                </AltTable>
             </Card>
         </section>
     </Layout>
@@ -39,68 +48,65 @@
 // Importing components
 import Layout from "@/components/layouts/Default.vue";
 import Card from "@/components/containers/Card.vue";
-import CTableData from "@/components/containers/TableData.vue";
+import AltTable from "@/components/containers/TableData.vue";
+
+import { reactive, watchEffect } from "vue";
+import tableConfig from "@/sample/tableConfig.json";
+import { getData, GetDataProps } from "@/sample/dataSample";
+
+const { entries, totalRows } = getData({});
+
+const dataState = reactive({
+    entries,
+    totalRows,
+});
+
+const pagination = reactive<Table.Pagination>({
+    ...(tableConfig.pagination as Table.Pagination),
+});
+
+// Handle data call here, preferably use async/await
+const updateData = (params: GetDataProps) => {
+    const { entries: nextEntries, totalRows: nextTotalRows } = getData(params);
+    dataState.entries = nextEntries;
+    dataState.totalRows = nextTotalRows;
+};
+
+// watchEffect used here to handle side effects, which allows async/await operation later on
+watchEffect(() => {
+    // console.table({
+    //     page: pagination.currentPage,
+    //     size: pagination.entrySize,
+    //     sortOption: pagination.currentSort,
+    //     filterOptions: pagination.filterOptions,
+    // });
+    updateData({
+        page: pagination.currentPage,
+        size: pagination.entrySize,
+        sortOption: pagination.currentSort,
+        filterOptions: pagination.filterOptions,
+    });
+});
 
 // Importing types and dependencies
-import { reactive } from "vue";
 import { Table } from "types";
 
-const showEntries: Array<number> = [5, 10, 25, 50, 100];
+const handlePagination = (page: number) => {
+    pagination.currentPage = page;
+};
 
-const data = [
-    {
-        id: "1",
-        name: "Atif",
-        age: 25,
-    },
-    {
-        id: "2",
-        name: "Akmal",
-    },
-    {
-        id: "3",
-        name: "Yazid",
-        age: 18,
-    },
-    {
-        id: "4",
-        name: "Faris",
-        age: 28,
-    },
-];
+const handleFilter = (filterOptions: Array<Table.FilterOption>) => {
+    pagination.currentPage = 1;
+    pagination.filterOptions = filterOptions;
+};
 
-const tableConfig = reactive<Table.Config>({
-    columns: [
-        {
-            name: "id",
-            label: "ID",
-            sortable: true,
-            width: "100px",
-            field: "id",
-        },
-        {
-            name: "name",
-            label: "Name",
-            field: "name",
-        },
-        {
-            name: "age",
-            label: "Age",
-            sortable: true,
-            field: "age",
-        },
-    ],
-    entries: data,
-    pagination: {
-        totalEntries: data.length,
-        currentPage: 1,
-        entrySize: 10,
-        currentSort: {
-            column: "id",
-            order: "desc",
-        },
-        showEntries,
-        // checkable: true,
-    },
-});
+const handleSort = (sortOption: Table.CurrentSort) => {
+    pagination.currentPage = 1;
+    pagination.currentSort = sortOption;
+};
+
+const handleResize = (size: number) => {
+    pagination.currentPage = 1;
+    pagination.entrySize = size;
+};
 </script>

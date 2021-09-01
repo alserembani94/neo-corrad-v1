@@ -7,6 +7,9 @@ export declare namespace Table {
         width?: string;
         // To match it with data structure
         field?: string;
+        filterable?: boolean;
+        // Allow dynamic display alternative
+        // display?: unknown;
     };
 
     type Entry = {
@@ -20,17 +23,26 @@ export declare namespace Table {
     };
 
     type Pagination = {
-        totalEntries: number;
+        // totalEntries: number;
         currentPage: number;
         entrySize: number;
         showEntries: Array<number>;
         currentSort: CurrentSort;
         checkable?: boolean;
+        filterOptions?: Array<FilterOption>;
     };
 
     type Config = {
         columns?: Array<Column>;
         entries?: Array<Entry>;
         pagination: Pagination;
+        totalRows?: number;
+    };
+
+    type FilterOption = {
+        filterId: number;
+        column: string;
+        match: boolean;
+        value: string;
     };
 }

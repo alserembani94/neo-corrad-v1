@@ -77,7 +77,7 @@
                             <tr>
                                 <td>
                                     <code class="mr-1">inputValidator</code>
-                                    <font-awesome-icon :icon="faFlask" />
+                                    <FontAwesomeIcon :icon="faFlask" />
                                 </td>
                                 <td><code>Function</code></td>
                                 <td></td>

@@ -64,7 +64,6 @@ import { defineProps, reactive } from "vue";
 const props = defineProps({
     label: {
         type: String,
-        default: "Input label",
     },
     id: {
         type: String,

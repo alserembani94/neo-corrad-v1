@@ -39,7 +39,7 @@
                         @click="changeFocusedMenu(menu.path || menu.id)"
                     >
                         <div class="w-6 h-6 flex justify-center items-center">
-                            <font-awesome-icon
+                            <FontAwesomeIcon
                                 :icon="icon[menu.icon]"
                                 flip="horizontal"
                             />
@@ -54,7 +54,7 @@
                             class="w-6 h-6 flex justify-center items-center"
                             v-if="menu.subMenu"
                         >
-                            <font-awesome-icon :icon="icon.faChevronRight" />
+                            <FontAwesomeIcon :icon="icon.faChevronRight" />
                         </div>
                     </button>
                     <!-- Second level navigation -->
@@ -101,7 +101,7 @@
                                             .isSidebarCollapse,
                                     }"
                                 >
-                                    <font-awesome-icon
+                                    <FontAwesomeIcon
                                         :icon="
                                             icon[subMenu1.icon] || icon.faCircle
                                         "
@@ -129,7 +129,7 @@
                                     "
                                     v-if="subMenu1.subMenu"
                                 >
-                                    <font-awesome-icon
+                                    <FontAwesomeIcon
                                         :icon="icon.faChevronRight"
                                         transform="shrink-4"
                                     />
@@ -182,7 +182,7 @@
                                                         .isSidebarCollapse,
                                             }"
                                         >
-                                            <font-awesome-icon
+                                            <FontAwesomeIcon
                                                 :icon="
                                                     icon[subMenu2.icon] ||
                                                     icon.faDotCircle

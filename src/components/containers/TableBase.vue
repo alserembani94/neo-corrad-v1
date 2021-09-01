@@ -20,7 +20,11 @@
                             "
                         >
                             <p>{{ th.label }}</p>
-                            <button v-if="th.sortable">
+                            <button
+                                v-if="th.sortable"
+                                name="sort"
+                                :value="th.name"
+                            >
                                 {{
                                     th.name === props.currentSort.column
                                         ? props.currentSort.order
@@ -44,20 +48,18 @@
                         <input
                             type="checkbox"
                             :id="td.id"
-                            :name="td.id"
+                            name="table-row-check"
                             :value="td.id"
                             @change="handleCheck"
                         />
                     </td>
-                    <td
-                        v-for="th in props.columns"
-                        :key="`item-${td.id}-${th.name}`"
-                    >
-                        {{ td[th.field] }}
+                    <td v-for="column in props.columns" :key="column.name">
+                        <slot :name="`row_${column.name}`" :entry="td" />
                     </td>
                 </tr>
             </tbody>
         </table>
+        <!-- <slot /> -->
     </div>
 </template>
 
@@ -81,14 +83,4 @@ const props = withDefaults(defineProps<Props>(), {
     }),
     checkable: false,
 });
-
-// eslint-disable-next-line @typescript-eslint/no-explicit-any
-const handleCheck = ({ target }: { target: HTMLInputElement }) =>
-    console.log({ value: target.value, checked: target.checked });
 </script>
-
-<style lang="postcss" scoped>
-th[data-col="id"] {
-    width: 10px;
-}
-</style>
