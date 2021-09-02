@@ -71,7 +71,7 @@
 
 <script setup lang="ts">
 import { computed } from "vue";
-import Layout from "@/components/layouts/Default.vue";
+import Layout from "@/components/layouts/Dashboard.vue";
 import Card from "@/components/containers/Card.vue";
 import {
     faVuejs,

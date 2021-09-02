@@ -265,7 +265,7 @@
 </template>
 
 <script setup lang="ts">
-import Layout from "@/components/layouts/Default.vue";
+import Layout from "@/components/layouts/Dashboard.vue";
 import Card from "@/components/containers/Card.vue";
 import CInput from "@/components/forms/Input.vue";
 import CodeHighlight from "vue-code-highlight/src/CodeHighlight.vue";

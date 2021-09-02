@@ -13,5 +13,5 @@
 </template>
 
 <script setup lang="ts">
-import Layout from "@/components/layouts/Default.vue";
+import Layout from "@/components/layouts/Dashboard.vue";
 </script>

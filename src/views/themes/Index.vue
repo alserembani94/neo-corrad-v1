@@ -1016,7 +1016,7 @@
 </template>
 
 <script setup lang="ts">
-import Layout from "@/components/layouts/Default.vue";
+import Layout from "@/components/layouts/Dashboard.vue";
 import Card from "@/components/containers/Card.vue";
 import "vue-code-highlight/themes/duotone-sea.css";
 import "vue-code-highlight/themes/window.css";

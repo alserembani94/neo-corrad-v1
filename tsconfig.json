@@ -20,9 +20,7 @@
       "expect-webdriverio",
       "webdriverio/sync",
       "mocha",
-      "chai",
-
-      "types.d.ts"
+      "chai"
     ],
     "paths": {
       "@/*": [
