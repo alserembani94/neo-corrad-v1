@@ -20,6 +20,12 @@
                 label="Password"
                 label-position="top"
                 v-model="password.new"
+                @focus="handlePasswordFocus"
+                @blur="handlePasswordBlur"
+            />
+            <PasswordScore
+                :validator="validator.errors"
+                :checklist-visible="false"
             />
             <Input
                 type="password"
@@ -34,7 +40,7 @@
             >
                 Sign In
             </button>
-            <p>{{ validator.level.toString() }}</p>
+            <!-- <p>{{ validator.level.toString() }}</p> -->
         </div>
     </Layout>
 </template>
@@ -42,7 +48,8 @@
 <script setup lang="ts">
 import Layout from "@/components/layouts/Card.vue";
 import Input from "@/components/forms/Input.vue";
-import { reactive, watchEffect, computed } from "vue";
+import PasswordScore from "@/components/utils/PasswordScore.vue";
+import { reactive, computed } from "vue";
 import usePasswordScore from "@/hooks/usePasswordScore";
 
 type Password = {

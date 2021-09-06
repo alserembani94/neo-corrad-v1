@@ -28,6 +28,19 @@ const usePasswordScore: UsePasswordScore = (password) => {
     });
 
     /**
+     * Principle of usePasswordScore hook
+     * 1. Split between score and error
+     *      - So that we can do blocking for both category
+     *      - Split management for later usage
+     * 2. Error classification
+     *      - Easier recognition for each error classification
+     * 3. Readjustable score module
+     *      - Maintainability for password scoring algorithm
+     * 4. Code splitting
+     *      - Can be exported and used for other application
+     */
+
+    /**
      * Password check score
      * 1. At least one lower case English letter
      * 2. At least one upper case English letter
@@ -88,4 +101,4 @@ const usePasswordScore: UsePasswordScore = (password) => {
     };
 };
 
-export { usePasswordScore as default };
+export { usePasswordScore as default, Errors };
