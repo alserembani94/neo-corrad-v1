@@ -1,11 +1,11 @@
 <template>
     <Layout>
         <section class="flex flex-col gap-2">
-            <h1>Default</h1>
+            <h1>Single Card Layout</h1>
         </section>
         <section class="flex flex-col gap-8">
             <Card title="Introduction">
-                <p>The default layout is the dashboard layout.</p>
+                <p>This is the single card layout.</p>
                 <div class="max-w-3xl">
                     <code-highlight languange="typescript">
                         {{ codeSample.importCard }}
@@ -13,7 +13,7 @@
                 </div>
 
                 <img
-                    src="@/assets/images/default_layout.jpg"
+                    src="@/assets/images/single_card_layout.png"
                     alt="Default NeoCorrad UI"
                 />
             </Card>
@@ -30,20 +30,13 @@ import "vue-code-highlight/themes/window.css";
 
 const codeSample = {
     importCard: `<template>
-    <Layout>
+    <CardLayout>
         <!-- Your content -->
-    </Layout>
+    </CardLayout>
 </template>
 
-<script lang="ts">
-import { defineComponent } from "vue";
-import Card from "@/components/layouts/Default.vue";
-
-export default defineComponent({
-    components: {
-        Layout
-    },
-});
+<script setup lang="ts">
+import CardLayout from "@/components/layouts/Card.vue";
 <script>`,
 };
 </script>

@@ -1,9 +1,9 @@
 <template>
-    <div :class="labelPosition">
+    <div :class="labelPosition" class="w-full">
         <p class="message" :class="{ error: inputHandler.isError }">
             {{ inputHandler.inputMessage }}
         </p>
-        <div class="flex flex-row flex-1">
+        <div class="flex flex-row flex-1 relative w-full">
             <div
                 class="prefix"
                 v-if="!!prefix"
@@ -17,10 +17,16 @@
             <input
                 :class="{
                     inputPrefix: !!prefix,
-                    inputPostfix: !!postfix,
+                    inputPostfix: !!postfix || props.type === 'password',
                     error: inputHandler.isError,
                 }"
-                :type="type"
+                :type="
+                    props.type !== 'password'
+                        ? props.type
+                        : inputHandler.passwordVisible
+                        ? 'text'
+                        : 'password'
+                "
                 :id="props.id"
                 :required="required"
                 :placeholder="
@@ -33,14 +39,42 @@
                 v-bind="$attrs"
                 v-model="inputHandler.inputElement"
             />
+            <!-- <button class="absolute right-4 top-2" v-if="type === 'password'">
+                <FontAwesomeIcon
+                    :icon="faEyeSlash"
+                    v-if="inputHandler.passwordVisible"
+                />
+                <FontAwesomeIcon
+                    :icon="faEye"
+                    v-if="!inputHandler.passwordVisible"
+                />
+            </button> -->
             <div
                 class="postfix"
-                v-if="!!postfix"
+                v-if="!!postfix || props.type === 'password'"
                 :class="{
+                    password: props.type === 'password',
                     error: inputHandler.isError,
                     focus: inputHandler.isFocused,
                 }"
             >
+                <button
+                    class="h-full px-4 py-2 w-14"
+                    v-if="props.type === 'password'"
+                    @click="
+                        inputHandler.passwordVisible =
+                            !inputHandler.passwordVisible
+                    "
+                >
+                    <FontAwesomeIcon
+                        :icon="faEyeSlash"
+                        v-if="inputHandler.passwordVisible"
+                    />
+                    <FontAwesomeIcon
+                        :icon="faEye"
+                        v-if="!inputHandler.passwordVisible"
+                    />
+                </button>
                 <p>{{ postfix }}</p>
             </div>
         </div>
@@ -57,9 +91,9 @@
 </template>
 
 <script setup lang="ts">
-import { defineProps, reactive } from "vue";
-// import { faTimes } from "@fortawesome/free-solid-svg-icons";
-// import { FontAwesomeIcon } from "@fortawesome/vue-fontawesome";
+import { defineProps, defineEmits, reactive } from "vue";
+import { faEye, faEyeSlash } from "@fortawesome/free-solid-svg-icons";
+import { FontAwesomeIcon } from "@fortawesome/vue-fontawesome";
 
 const props = defineProps({
     label: {
@@ -95,6 +129,12 @@ const props = defineProps({
     },
 });
 
+type Emits = {
+    (e: "update", value: string | number): void;
+};
+
+const emit = defineEmits<Emits>();
+
 type InputHandler = {
     inputElement: string | number;
     inputMessage: string;
@@ -102,6 +142,7 @@ type InputHandler = {
     isFocused: boolean;
     prevInput?: string;
     inputMode: string;
+    passwordVisible?: false;
 };
 
 const inputHandler = reactive<InputHandler>({
@@ -116,6 +157,7 @@ const inputHandler = reactive<InputHandler>({
             : props.type === "email"
             ? "email"
             : "text",
+    passwordVisible: false,
 });
 
 const handleFocus = () => {
@@ -127,6 +169,8 @@ const handleChange = ({ target }: { target: HTMLInputElement }) => {
         inputHandler.isError = false;
         inputHandler.prevInput = undefined;
     }
+
+    emit("update", target.value);
 };
 
 const handleBlur = ({ target }: { target: HTMLInputElement }) => {
@@ -179,6 +223,9 @@ input {
 
 .postfix {
     @apply py-2 px-6 rounded-r-md bg-light-500 transition-colors duration-500 ease-in-out;
+    &.password {
+        @apply bg-white border border-light-500 py-0 px-0;
+    }
 
     &.error {
         @apply bg-danger-500 text-white;
@@ -207,7 +254,7 @@ input {
 
 .top,
 .float {
-    @apply flex flex-col-reverse;
+    @apply flex flex-col-reverse items-start;
     label {
         @apply mb-2 text-sm;
     }

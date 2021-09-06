@@ -34,7 +34,7 @@
             </button>
         </div>
         <hr class="text-light-500" :class="[props.cardType]" v-if="title" />
-        <div class="flex flex-col gap-4">
+        <div class="flex flex-col gap-4 w-full">
             <slot />
         </div>
     </div>

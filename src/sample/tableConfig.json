@@ -22,6 +22,11 @@
             "filterable": true
         },
         {
+            "name": "key",
+            "label": "Key",
+            "field": "key"
+        },
+        {
             "name": "action",
             "label": "Action",
             "width": "100px"

@@ -15,17 +15,11 @@
                         {{ codeSample.importInput }}
                     </code-highlight>
                 </div>
-
-                <p>
-                    Note that <code>c-input</code> is used instead of native
-                    input for for microinteraction control. It is also advisable
-                    to use <code>input</code> inside <code>form</code> element.
-                </p>
             </Card>
             <Card title="Props">
                 <p>
                     Here are the list of acceptable props for
-                    <code>CInput</code> component:
+                    <code>Input</code> component:
                 </p>
 
                 <div class="overflow-x-auto">
@@ -36,7 +30,7 @@
                                 <td>Type</td>
                                 <td>Default value</td>
                                 <td>Required</td>
-                                <td>Notes</td>
+                                <td class="w-1/3">Notes</td>
                             </tr>
                         </thead>
                         <tbody>
@@ -96,7 +90,15 @@
                                 <td><code>string</code></td>
                                 <td>text</td>
                                 <td><code>false</code></td>
-                                <td></td>
+                                <td>
+                                    This is inherited from
+                                    <code>type</code> parameter that accepted by
+                                    native <code>input</code> elements. Each
+                                    types are handled by the component,
+                                    including <code>password</code>,
+                                    <code>number</code> and so on, except for
+                                    <code>file</code>.
+                                </td>
                             </tr>
                             <tr>
                                 <td><code>prefix</code></td>
@@ -131,14 +133,14 @@
                 </div>
             </Card>
             <Card title="Sample: Side Label">
-                <CInput id="test-input-1" label-position="side" label="Name" />
-                <CInput
+                <Input id="test-input-1" label-position="side" label="Name" />
+                <Input
                     id="test-input-2"
                     label-position="side"
                     label="Mother's name"
                     placeholder="Can I be placeholder?"
                 />
-                <CInput
+                <Input
                     id="test-input-3"
                     label-position="side"
                     label="Father's name"
@@ -146,14 +148,14 @@
                 />
             </Card>
             <Card title="Sample: Top Label">
-                <CInput id="test-input-1" label-position="top" label="Name" />
-                <CInput
+                <Input id="test-input-1" label-position="top" label="Name" />
+                <Input
                     id="test-input-2"
                     label-position="top"
                     label="Mother's name"
                     placeholder="Can I be placeholder?"
                 />
-                <CInput
+                <Input
                     id="test-input-3"
                     label-position="top"
                     label="Father's name"
@@ -161,14 +163,14 @@
                 />
             </Card>
             <Card title="Sample: Float Label">
-                <CInput id="test-input-1" label-position="float" label="Name" />
-                <CInput
+                <Input id="test-input-1" label-position="float" label="Name" />
+                <Input
                     id="test-input-2"
                     label-position="float"
                     label="Mother's name"
                     placeholder="Can I be placeholder?"
                 />
-                <CInput
+                <Input
                     id="test-input-3"
                     label-position="float"
                     label="Father's name"
@@ -177,24 +179,24 @@
             </Card>
             <Card title="Sample: Float Label (with grid)">
                 <div class="grid grid-cols-2 gap-x-16 gap-y-4">
-                    <CInput
+                    <Input
                         id="test-input-1"
                         label-position="float"
                         label="Name"
                     />
-                    <CInput
+                    <Input
                         id="test-input-2"
                         label-position="float"
                         label="Mother's name"
                         placeholder="Can I be placeholder?"
                     />
-                    <CInput
+                    <Input
                         id="test-input-3"
                         label-position="float"
                         label="Father's name"
                         default-value="This is default value."
                     />
-                    <CInput
+                    <Input
                         id="test-input-3"
                         label-position="float"
                         label="Father's name"
@@ -206,19 +208,19 @@
                 title="Sample: Error simulator"
                 subtitle="These inputs should be email, try to input an invalid email format"
             >
-                <CInput
+                <Input
                     id="test-input-1"
                     label-position="float"
                     label="Email"
                     type="email"
                 />
-                <CInput
+                <Input
                     id="test-input-1"
                     label-position="float"
                     label="Email"
                     type="email"
                 />
-                <CInput
+                <Input
                     id="test-input-2"
                     label-position="float"
                     label="Mother's email"
@@ -226,7 +228,7 @@
                     placeholder="Can I be placeholder?"
                     type="email"
                 />
-                <CInput
+                <Input
                     id="test-input-3"
                     label-position="float"
                     label="Father's email"
@@ -235,7 +237,7 @@
                 />
             </Card>
             <Card title="Sample: Prefixes and Postfixes">
-                <CInput
+                <Input
                     id="test-input-1"
                     label-position="float"
                     label="Price (with prefix)"
@@ -244,14 +246,14 @@
                     prefix="MYR"
                     minlength="10"
                 />
-                <CInput
+                <Input
                     id="test-input-1"
                     label-position="float"
                     label="Email (with postfix)"
                     postfix="@corrad.com"
                     minlength="5"
                 />
-                <CInput
+                <Input
                     id="test-input-1"
                     label-position="float"
                     label="Email (with prefix &amp; postfix)"
@@ -267,7 +269,7 @@
 <script setup lang="ts">
 import Layout from "@/components/layouts/Dashboard.vue";
 import Card from "@/components/containers/Card.vue";
-import CInput from "@/components/forms/Input.vue";
+import Input from "@/components/forms/Input.vue";
 import CodeHighlight from "vue-code-highlight/src/CodeHighlight.vue";
 import "vue-code-highlight/themes/duotone-sea.css";
 import "vue-code-highlight/themes/window.css";
@@ -276,7 +278,7 @@ import { FontAwesomeIcon } from "@fortawesome/vue-fontawesome";
 
 const codeSample = {
     importInput: `<template>
-    <CInput
+    <Input
         id="test-input-1"
         label-position="float"
         label="Name"
@@ -284,7 +286,7 @@ const codeSample = {
 </template>
 
 <script setup lang="ts">
-import CInput from "@/components/forms/Input.vue";
+import Input from "@/components/forms/Input.vue";
 <script>`,
 };
 </script>

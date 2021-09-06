@@ -17,6 +17,12 @@ type MenuList = Array<MenuItem>;
 
 export const sidebarMenu: MenuList = [
     {
+        id: "welcome",
+        label: "Welcome",
+        icon: "faCouch",
+        path: "/welcome",
+    },
+    {
         id: "menu-dashboard",
         label: "Dashboard",
         icon: "faTachometerAlt",
@@ -68,6 +74,11 @@ export const sidebarMenu: MenuList = [
                 label: "Table",
                 path: "/containers/table",
             },
+            {
+                id: "menu-tabledata",
+                label: "Table Data",
+                path: "/containers/table-data",
+            },
         ],
     },
     {
@@ -76,51 +87,73 @@ export const sidebarMenu: MenuList = [
         icon: "faCalculator",
         subMenu: [
             {
-                id: "menu-default",
-                label: "Default",
-                path: "/layouts/default",
+                id: "menu-dashboard",
+                label: "Dashboard",
+                path: "/layouts/dashboard",
+            },
+            {
+                id: "menu-single-carrd",
+                label: "Single Card",
+                path: "/layouts/single-card",
             },
         ],
     },
+    // {
+    //     id: "menu-samples",
+    //     label: "More Samples",
+    //     icon: "faCalculator",
+    //     subMenu: [
+    //         {
+    //             id: "menu-dashboard",
+    //             label: "Dashboard",
+    //             path: "/layouts/dashboard",
+    //         },
+    //         {
+    //             id: "menu-single-carrd",
+    //             label: "Single Card",
+    //             path: "/layouts/single-card",
+    //         },
+    //     ],
+    // },
     {
         id: "menu-themes",
         label: "Themes",
         icon: "faPaintBrush",
         path: "/themes",
     },
-    // {
-    //     id: "menu-account",
-    //     label: "1st Lvl Nav",
-    //     icon: "faUser",
-    //     subMenu: [
-    //         {
-    //             id: "menu-profile",
-    //             label: "2nd Lvl Nav 1",
-    //             path: "/test1",
-    //         },
-    //         {
-    //             id: "menu-appearance",
-    //             label: "2nd Lvl Nav 2",
-    //             path: "/test2",
-    //         },
-    //         {
-    //             id: "menu-domain",
-    //             label: "2nd Lvl Nav 3",
-    //             subMenu: [
-    //                 {
-    //                     id: "menu-domain-manage",
-    //                     label: "3nd Lvl Nav 1",
-    //                     path: "/test3",
-    //                 },
-    //                 {
-    //                     id: "menu-domain-add",
-    //                     label: "3nd Lvl Nav 2",
-    //                     path: "/test4",
-    //                 },
-    //             ],
-    //         },
-    //     ],
-    // },
+    {
+        id: "menu-samples",
+        label: "More Samples",
+        icon: "faUser",
+        subMenu: [
+            // {
+            //     id: "menu-sign-on",
+            //     label: "Sign In Screen",
+            //     path: "/auth/sign-in",
+            // },
+            // {
+            //     id: "menu-appearance",
+            //     label: "2nd Lvl Nav 2",
+            //     path: "/test2",
+            // },
+            {
+                id: "menu-auth",
+                label: "Auth Screen",
+                subMenu: [
+                    {
+                        id: "menu-sign-in",
+                        label: "Sign In",
+                        path: "/auth/sign-in",
+                    },
+                    {
+                        id: "menu-sign-up",
+                        label: "Register",
+                        path: "/auth/register",
+                    },
+                ],
+            },
+        ],
+    },
     {
         id: "menu-about",
         label: "About",
