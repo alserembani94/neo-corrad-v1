@@ -53,6 +53,11 @@ export const sidebarMenu: MenuList = [
         icon: "faClipboardList",
         subMenu: [
             {
+                id: "menu-form-guide",
+                label: "Form Guide",
+                path: "/forms/guides",
+            },
+            {
                 id: "menu-input",
                 label: "Input",
                 path: "/forms/input",

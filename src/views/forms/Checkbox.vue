@@ -12,7 +12,7 @@
 
                 <div class="max-w-3xl w-full">
                     <code-highlight languange="typescript">
-                        {{ codeSample.importInput }}
+                        {{ importCheckbox }}
                     </code-highlight>
                 </div>
             </Card>
@@ -241,20 +241,9 @@ import "vue-code-highlight/themes/window.css";
 // import { faFlask } from "@fortawesome/free-solid-svg-icons";
 // import { FontAwesomeIcon } from "@fortawesome/vue-fontawesome";
 
-const codeSample = {
-    importInput: `<template>
-    <Checkbox
-        id="checkbox-1"
-        label="This the checkbox label"
-        checkbox-position="left"
-        :spaced="false"
-        @update="handleUpdate"
-    />
-</template>
+import { importCheckbox } from "@/sample/codeSample";
 
-<script setup lang="ts">
-import Checkbox from "@/components/forms/Checkbox.vue";
-<script>`,
+const codeSample = {
     emitUpdateParams: `payload: {
     name: string,
     value: string | number
