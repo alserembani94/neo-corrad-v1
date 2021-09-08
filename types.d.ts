@@ -23,7 +23,6 @@ export declare namespace Table {
     };
 
     type Pagination = {
-        // totalEntries: number;
         currentPage: number;
         entrySize: number;
         showEntries: Array<number>;
@@ -45,4 +44,22 @@ export declare namespace Table {
         match: boolean;
         value: string;
     };
+}
+
+export declare namespace PasswordScore {
+    type Errors = {
+        lowerChar: boolean;
+        upperChar: boolean;
+        specialChar: boolean;
+        digitChar: boolean;
+        validLength: boolean;
+        repetitive: boolean;
+    };
+
+    type Validator = {
+        level: number;
+        errors: Errors;
+    };
+
+    type UsePasswordScore = (password: string) => Validator;
 }

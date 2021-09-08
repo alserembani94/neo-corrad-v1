@@ -16,7 +16,8 @@ type GetData = (params: GetDataProps) => {
 export const getData: GetData = ({
     size = 10,
     page = 1,
-    filterOptions = [],
+    // TODO: Add filter functions
+    // filterOptions = [],
     sortOption = {},
 }) => {
     const selectedData = data;
