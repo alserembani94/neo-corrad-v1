@@ -304,7 +304,7 @@ menuList.forEach((menuItem) => {
 });
 </script>
 
-<style scoped>
+<style scoped lang="postcss">
 ul {
     @apply list-none;
 }

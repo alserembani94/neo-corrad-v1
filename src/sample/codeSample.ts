@@ -64,6 +64,16 @@ export const importCheckbox = `<template>
 import Checkbox from "@/components/forms/Checkbox.vue";
 </script>`;
 
+export const importDropdown = `<template>
+    <Dropdown
+        id="dropdown-1"
+    />
+</template>
+
+<script setup lang="ts">
+import Dropdown from "@/components/forms/Dropdown.vue";
+</script>`;
+
 /** --------------------------------------------------
  *      CONTAINER COMPONENT
  --------------------------------------------------- */

@@ -67,6 +67,11 @@ export const sidebarMenu: MenuList = [
                 label: "Checkbox",
                 path: "/forms/checkbox",
             },
+            {
+                id: "menu-dropdown",
+                label: "Dropdown",
+                path: "/forms/dropdown",
+            },
         ],
     },
     {

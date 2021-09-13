@@ -18,7 +18,7 @@
             <Card title="Props">
                 <p>
                     Here are the list of acceptable props for
-                    <code>Input</code> component:
+                    <code>TableBase</code> component:
                 </p>
 
                 <div class="overflow-x-auto">

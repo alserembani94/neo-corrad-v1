@@ -65,6 +65,11 @@ const routes: Array<RouteRecordRaw> = [
         name: "Checkbox",
         component: () => import("../views/forms/Checkbox.vue"),
     },
+    {
+        path: "/forms/dropdown",
+        name: "Dropdown",
+        component: () => import("../views/forms/Dropdown.vue"),
+    },
 
     // CONTAINERS ROUTES
     {
