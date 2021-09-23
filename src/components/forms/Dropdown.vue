@@ -9,7 +9,7 @@
             <button type="button" class="container" @click="handleClick">
                 <input
                     type="text"
-                    class="w-0"
+                    class="w-0 absolute"
                     :name="dropdownProps.id"
                     :id="dropdownProps.id"
                     v-model="dropdownState.selected"
@@ -17,6 +17,7 @@
                 />
                 <p :class="['placeholder', { active: dropdownState.selected }]">
                     {{ selectedOption?.label || dropdownProps.placeholder }}
+                    <slot name="options" :option="selectedOption" />
                 </p>
                 <!-- <FontAwesomeIcon
                     :icon="
@@ -49,7 +50,8 @@
                     @click="handleSelect"
                     :disabled="option.disabled"
                 >
-                    {{ option.label }}
+                    <slot name="options" :option="option" />
+                    {{ !$slots.options ? option.label : null }}
                 </button>
                 <!-- <button class="options_item">Hello</button>
                 <button class="options_item">Holla</button>

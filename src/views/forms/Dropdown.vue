@@ -121,7 +121,11 @@
                         id="dropdown-1"
                         label="Choose one"
                         :options="sampleOptions1"
-                    />
+                    >
+                        <template #options="{ option }">
+                            Test - {{ option.label }}
+                        </template>
+                    </Dropdown>
                     <Dropdown
                         id="dropdown-2"
                         label="Choose one (with example)"
