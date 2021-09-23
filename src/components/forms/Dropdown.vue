@@ -26,7 +26,11 @@
                             ? null
                             : selectedOption?.label || dropdownProps.placeholder
                     }} -->
-                    <slot name="options_selected" :option="selectedOption" />
+                    <slot
+                        name="options_selected"
+                        :option="selectedOption"
+                        :placeholder="dropdownProps.placeholder"
+                    />
                 </p>
                 <!-- <FontAwesomeIcon
                     :icon="
@@ -224,7 +228,7 @@ const handleSelect = (e: any) => {
             }
 
             &_item {
-                @apply px-4 py-3 rounded hover:bg-primary-300 hover:text-white text-left transition-colors duration-100 ease-linear;
+                @apply px-4 py-3 rounded hover:bg-primary-300 hover:text-white focus:bg-primary-300 focus:text-white text-left transition-colors duration-100 ease-linear;
                 &.active {
                     @apply bg-primary-500 text-white;
                 }
