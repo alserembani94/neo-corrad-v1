@@ -16,8 +16,17 @@
                     required
                 />
                 <p :class="['placeholder', { active: dropdownState.selected }]">
-                    {{ selectedOption?.label || dropdownProps.placeholder }}
-                    <slot name="options" :option="selectedOption" />
+                    {{
+                        $slots.options_selected
+                            ? null
+                            : selectedOption?.label || dropdownProps.placeholder
+                    }}
+                    <!-- {{
+                        $slots.options
+                            ? null
+                            : selectedOption?.label || dropdownProps.placeholder
+                    }} -->
+                    <slot name="options_selected" :option="selectedOption" />
                 </p>
                 <!-- <FontAwesomeIcon
                     :icon="
@@ -69,6 +78,7 @@ import {
     computed,
     ref,
     defineEmits,
+    useSlots,
 } from "vue";
 import { faChevronDown } from "@fortawesome/free-solid-svg-icons";
 import { FontAwesomeIcon } from "@fortawesome/vue-fontawesome";
@@ -154,7 +164,6 @@ const handleSelect = (e: any) => {
 
     dropdownEmits("update", { name: dropdownProps.id, value });
 };
-
 /**
  * TODO: Things to improve:
  * 1. Error handling
